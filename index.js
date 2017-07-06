@@ -18,7 +18,7 @@ var Cryptr = require('cryptr'),
 const _ = require('underscore');
 var helmet = require('helmet')
 const cors = require('cors');
-    
+     
 app.use(cors());
 app.options('*', cors());
 app.use(helmet())
