@@ -68,7 +68,7 @@ app.use(function (req, res, next) {
     //console.log("Params Found ",token + "    " + req.url + "   " + __dirname);
     var dbObj  = req.app.get('db');
 
- 
+  
     // provide this action for register API
 
     if(path !== '/mobile/register'){
