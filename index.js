@@ -14,7 +14,7 @@ const app = express();
  
 var Cryptr = require('cryptr'),
     cryptr = new Cryptr('myTotalySecretKey');
-       
+        
 const _ = require('underscore');
 var helmet = require('helmet')
 const cors = require('cors');
