@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/bin'));
-
+ 
 const configuration = require('./config')();
 const databaseUtil  = require('./utils/database_utils');
 app.use(express.static('dist'))
