@@ -11,7 +11,7 @@ const expressValidator = require('express-validator');
 
 // database connection
 const app = express();
-
+ 
 var Cryptr = require('cryptr'),
     cryptr = new Cryptr('myTotalySecretKey');
   
