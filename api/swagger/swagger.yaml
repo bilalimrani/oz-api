@@ -1,0 +1,351 @@
+---
+swagger: "2.0"
+info:
+  description: "API for Objective Zero"
+  version: "1.0.0"
+  title: "Objective Zero API"
+  contact:
+    email: "you@your-company.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "107.170.82.21:3000"
+basePath: "/mobile"
+tags:
+- name: "admins"
+  description: "Secured Admin-only calls"
+- name: "developers"
+  description: "Operations available to regular developers"
+schemes:
+- "http"
+paths:
+  /register:
+    post:
+      summary: "Register a new user"
+      description: "Register a new User to our system"
+      operationId: "register"
+      produces:
+      - "application/json"
+      parameters:
+        - in: body
+          name: user
+          description: The user to create.
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+              deviceId:
+                type: string
+              deviceType:
+                type: string  
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "user"
+  /signin:
+    post:
+      summary: "User Sign In"
+      description: "Sign In"
+      operationId: "signin"
+      produces:
+      - "application/json"
+      parameters:
+        - in: body
+          name: sign
+          description: The user to create.
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+              deviceId:
+                type: string
+              deviceType:
+                type: string  
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "user"
+  /facebook:
+    post:
+      summary: "User Sign In"
+      description: "facebook regsitartion"
+      operationId: "facebook"
+      produces:
+      - "application/json"
+      parameters:
+        - in: body
+          name: facebook Ragistration
+          description: The user to create.
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string
+              fb_id:
+                type: string
+              deviceId:
+                type: string
+              deviceType:
+                type: string 
+              name:
+                type: string   
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "user"
+  /signout:
+    post:
+      summary: "User Sign Out"
+      description: "Sign Out User"
+      operationId: "facebook"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string
+        - in: body
+          name: facebook Ragistration
+          description: The user to create.
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string 
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "user"
+  /assign_username:
+    post:
+      summary: "Assign User name "
+      description: "New User name to User"
+      operationId: "assign_username"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string
+        - in: body
+          name: facebook Ragistration
+          description: The user to create.
+          schema:
+            type: object
+            required:
+              - username
+            properties:
+              username:
+                type: string 
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "user_detail"
+  /assignUserRole:
+    post:
+      summary: "Change the Role of the User"
+      description: "Assign the user role. Role must be Ambassador, Veteran or user."
+      operationId: "assignUserRole"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string
+        - in: body
+          name: Assign User Role
+          description: Assign User a role or update.
+          schema:
+            type: object
+            required:
+              - user_role
+            properties:
+              user_role:
+                type: string 
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "user_detail"
+  /updateambassador:
+    post:
+      summary: "Update the Ambassador profile"
+      description: "Ambassador can update his/her profile"
+      operationId: "updateambassador"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string
+        - in: body
+          name: Update Ambassador profile
+          description: Profile Update.
+          schema:
+            type: object
+            properties:
+              name:
+                type: string 
+              age:
+                type: string
+              gender:
+                type: string
+              service_member:
+                type: string
+              service:
+                type: string
+              veteran:
+                type: string
+              mos:
+                type: string
+              component:
+                type: string             
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "add_ambassador"
+  /getambassadorprofile:
+    post:
+      summary: "get the Ambassador Profile"
+      description: "Ambassador can get their profile"
+      operationId: "getambassadorprofile"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string            
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "add_ambassador"
+  /ambassadorData:
+    post:
+      summary: "Get List of All Ambassador"
+      description: "User can get the lost of all ambassador available in our record"
+      operationId: "ambassadorData"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string            
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "add_ambassador"
+  /becomeambassador:
+    get:
+      summary: "Become Ambassador Page"
+      description: "Api responses an html page"
+      operationId: "becomeambassador"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string            
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "add_ambassador" 
+  /quessionarepage:
+    get:
+      summary: "Become Ambassador Page"
+      description: "Api responses an html page"
+      operationId: "quessionarepage"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string            
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "add_ambassador"
+  /congratulationpage:
+    get:
+      summary: "Become Ambassador Page"
+      description: "Api responses an html page"
+      operationId: "congratulationpage"
+      produces:
+      - "application/json"
+      parameters:
+        - name: access_token
+          in: header
+          description: Access Token
+          required: true
+          type: string
+          format: string            
+      responses:
+        200:
+          description: "search results matching criteria"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "add_ambassador"           
+
+
+     
+     
+  
+

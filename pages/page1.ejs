@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ambassador Program</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script type='text/javascript'>
+            function getText()
+            {
+                return document.getElementById('txtinput').value;
+            }
+            function performClick()
+            {
+            	window.location = 'oz:contribute';
+            	//ok.performClick('congratulation')
+                
+            }
+        </script>
+</head>
+<body>
+<div class="container">
+  <div class="row row-centered">  
+      <video  controls  class="col-xs-12 col-centered" style="margin-top: 30px;margin-bottom: 40px;">
+	  	<source src="<%= link %>" type="video/mp4">
+	  </video>
+	  <h4  style="text-align: center; margin-top: 30px;color: #308bf2; margin: 0;"><b>What does it take to be an</b></h4>
+	   <h4  style="text-align: center;color: #308bf2;margin: 0;margin-bottom: 20px;"><b>Ambassador?</b></h4>
+	   <p  style="text-align: center;margin: 0">
+	   	Ambassadors undergo suicide prevention
+	   </p>
+	   <p style="text-align: center;margin: 0">
+	   	training and agree to make themselves
+	   </p>
+	    
+	    <p  style="text-align: center;margin: 0">
+	   	available to those in-need for at least 30
+	   </p>
+	    <p  style="text-align: center;margin: 0">
+	   	minutes a week
+	   </p>
+	   <button class="btn btn-warning center-block " style="width: 80% ; margin-top: 20px;" onclick="window.location.replace('http://<%=host%>:<%=port%>/mobile/quessionarepage?token=<%=token%>')" >BECOME AN AMBASSADOR</button>
+	   <button class="btn btn-primary center-block " style="width: 80% ;margin-top: 10px;" onclick="performClick()" >CONTRIBUTE</button>
+
+	   
+  </div>
+ 
+	
+</div>
+</body>
+</html>
