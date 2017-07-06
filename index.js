@@ -60,7 +60,7 @@ app.use(function (req, res, next) {
             "deviceId" : "" ,           
             "deviceType": "" ,
             "isverified": ""
-    };
+    }; 
 
     let path = req.url;
     let key = req.headers.access_token;
