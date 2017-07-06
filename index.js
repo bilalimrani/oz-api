@@ -9,7 +9,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 
-// database connection
+// database connection 
 const app = express();
  
 var Cryptr = require('cryptr'),
