@@ -11,16 +11,21 @@
 
 </head>
 <body>
-<div class="container">
+<div class="container" style="padding-left: 10%;padding-right: 10%">
   <div class="row row-centered">  
     	
-    		 <h4  style="text-align: center; margin-top: 20%;color:#308bf2; "><b><%-title%></b></h4>
+    		 <h4  style="text-align: center; margin-top: 10%;color:#308bf2;  font-size: 22px "><b>Frequently Ask Questions</b></h4>
 			 	 
-			 		<% for(var i=0; i < arr.length; i++) { %>
-		 			
-		     			<p style="padding-left: 15%;padding-right: 15%"><span style="color: #308bf2;font-size: 20px"><b>Q:&nbsp&nbsp</b></span><%-arr[i][0]%></p>
-		     			<p style="padding-left: 15%;padding-right: 15%"><span style="color: rgb(130, 130, 130);font-size: 20px"><b>A:&nbsp&nbsp</b></span><%-arr[i][1]%></p>
+			 		<% for(var i=0; i < arr1.length; i++) { %>
+		 				<div style="display: inline-flex;">
+		 					<span style="color: #308bf2;font-size: 20px;white-space:nowrap;"><b>Q:&nbsp&nbsp</b></span><span style="padding-top: 8px"><%-arr1[i]%></span>
+		 				</div>
+		 				<div style="display: inline-flex;">
+		 					<span style="color: rgb(130, 130, 130);font-size: 20px;white-space:nowrap;"><b>A:&nbsp&nbsp</b></span><span style="padding-top: 6px"><%-arr2[i]%></span>
 
+		 				</div>
+		     			
+		     			
 					<% } %>
 			 
 		 		   

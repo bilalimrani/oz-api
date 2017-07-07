@@ -50,29 +50,29 @@ function getPage1(req,res){
 
 function getQuessionarePage(req,res){
 
-	let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
-	let qs2 = "In the context of group counseling,members that are high in conformity also tend to be high in:";
+    let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
+    let qs2 = "In the context of group counseling,members that are high in conformity also tend to be high in:";
 
-	let ans1_1 = "formal educational experiances XYZ"
-	let ans1_2 = "observational learning experiances"
-	let ans1_3 = "deverse interpresonal interaction"
-	let ans1_4 = "All of the Above"
-	var access_token = req.token;
-	
-	var path = req.app.get('current_directory');
-	res.render(path+'/pages/quessionarepage',{q1:qs1,q2:qs2,chk1_1:ans1_1,chk1_2:ans1_2,chk1_3:ans1_3,chk1_4:ans1_4,token:access_token,host:URL,port:port });
+    let ans1_1 = "formal educational experiances XYZ"
+    let ans1_2 = "observational learning experiances"
+    let ans1_3 = "deverse interpresonal interaction"
+    let ans1_4 = "All of the Above"
+    var access_token = req.token;
+    
+    var path = req.app.get('current_directory');
+    res.render(path+'/pages/quessionarepage',{q1:qs1,q2:qs2,chk1_1:ans1_1,chk1_2:ans1_2,chk1_3:ans1_3,chk1_4:ans1_4,token:access_token,host:URL,port:port });
 }
 
 function getCongratulationPage(req,res){
-	console.log("I am in getCongratulationPage");
+    console.log("I am in getCongratulationPage");
 
-			var user_id = req.userData.id;
-			console.log('Id',user_id);
-			let table = 'ambassedor';
-		    var dbObj  = req.app.get('db');
-		    let bodyyy = {
-		        user_id:user_id
-		    };
+            var user_id = req.userData.id;
+            console.log('Id',user_id);
+            let table = 'ambassedor';
+            var dbObj  = req.app.get('db');
+            let bodyyy = {
+                user_id:user_id
+            };
 
 
         var checkUserExist = function (req){
@@ -89,16 +89,16 @@ function getCongratulationPage(req,res){
                             resolve(req);
                         }else{
                                     console.log('ALready exist');
-					 let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
-					 let qs2 = "In the context of group counseling,members that are high in conformity also tend to be high in:";
+                     let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
+                     let qs2 = "In the context of group counseling,members that are high in conformity also tend to be high in:";
 
-					 let ans1_1 = "formal educational experiances XYZ"
-					 let ans1_2 = "observational learning experiances"
-					 let ans1_3 = "deverse interpresonal interaction"
-					 let ans1_4 = "All of the Above"
+                     let ans1_1 = "formal educational experiances XYZ"
+                     let ans1_2 = "observational learning experiances"
+                     let ans1_3 = "deverse interpresonal interaction"
+                     let ans1_4 = "All of the Above"
 
-					 var path = req.app.get('current_directory');
-				 	res.render(path+'/pages/verifiedambassador',{q1:qs1,q2:qs2,chk1_1:ans1_1,chk1_2:ans1_2,chk1_3:ans1_3,chk1_4:ans1_4});
+                     var path = req.app.get('current_directory');
+                    res.render(path+'/pages/verifiedambassador',{q1:qs1,q2:qs2,chk1_1:ans1_1,chk1_2:ans1_2,chk1_3:ans1_3,chk1_4:ans1_4});
                         }
                     }
 
@@ -109,7 +109,7 @@ function getCongratulationPage(req,res){
 
 
 
-		    var insertUser = function (obj) {
+            var insertUser = function (obj) {
 
             return new Promise((resolve,reject)=>{
 
@@ -134,47 +134,47 @@ function getCongratulationPage(req,res){
 
     };
 
-   		 var verifyAmbassador = function(obj){
-        			  return new Promise ((resolve,reject)=>{
-        			  		console.log('I want to verify ambassedor');
+         var verifyAmbassador = function(obj){
+                      return new Promise ((resolve,reject)=>{
+                            console.log('I want to verify ambassedor');
                 let query = 'UPDATE users SET isverified = :isverified  WHERE id = :user_id';
 
         let dataobj = {isverified: 1 ,  user_id : user_id};
         databaseUtil.updateMultiRecord(dbObj,query,dataobj,function (err,data){
             if(err){
-            	console.log(err);
+                console.log(err);
                 reject(err);
             }else{
-            	console.log(data)
+                console.log(data)
                 
                 resolve(data);
             }
         });
     });
-        		}
+                }
 
     var openPage = function(obj){
-    	 return new Promise((resolve,reject)=>{
+         return new Promise((resolve,reject)=>{
 
                
-		 let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
-		 let qs2 = "In the context of group counseling,members that are high in conformity also tend to be high in:";
+         let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
+         let qs2 = "In the context of group counseling,members that are high in conformity also tend to be high in:";
 
-		 let ans1_1 = "formal educational experiances XYZ"
-		 let ans1_2 = "observational learning experiances"
-		 let ans1_3 = "deverse interpresonal interaction"
-		 let ans1_4 = "All of the Above"
+         let ans1_1 = "formal educational experiances XYZ"
+         let ans1_2 = "observational learning experiances"
+         let ans1_3 = "deverse interpresonal interaction"
+         let ans1_4 = "All of the Above"
 
-		 var path = req.app.get('current_directory');
-	 	res.render(path+'/pages/verifiedambassador',{q1:qs1,q2:qs2,chk1_1:ans1_1,chk1_2:ans1_2,chk1_3:ans1_3,chk1_4:ans1_4});
+         var path = req.app.get('current_directory');
+        res.render(path+'/pages/verifiedambassador',{q1:qs1,q2:qs2,chk1_1:ans1_1,chk1_2:ans1_2,chk1_3:ans1_3,chk1_4:ans1_4});
 
 
             });
     }
-    	checkUserExist(req)
-    	.then(insertUser)
-    	.then(verifyAmbassador)
-            	.then(openPage)
+        checkUserExist(req)
+        .then(insertUser)
+        .then(verifyAmbassador)
+                .then(openPage)
                 .catch((e) => {
                 res.status(299).json({message: "something wrong happend while processsing request", error: e});
         });
@@ -281,24 +281,63 @@ function termsAndCondition(req,res){
     retriveData(req).catch((e)=>{});
 }
 
+
+
 function faq(req,res){
     console.log('I am in Faq')
+    var arr1 = [];
+    var arr2 = [];
+    
+     var retriveData = function(req){
+    console.log("I am in retriveData")
+      var dbObj = req.app.get('db');
+        var dataobj = {
+            section_type:"abc"
+        }
 
-        var title = "Frequently Ask Questions"
+        let query = "Select *from faqs";
+        return new Promise((resolve,reject)=>{
+          
+            databaseUtil.getSingleRecord(dbObj,query,dataobj,function(err,data){
+                if(err){
+                    console.log("errors",err)
+                    reject(err);
+                }else{
+
+                    for(var i = 0 ; i < data.length ; i++){
+
+                            console.log("my data",data[i].question)
+                            arr1.push(data[i].question);
+                            arr2.push(data[i].answer);
+                    }
+                   
+                   
+                    let title = data[0].title;
+                    
+                 
+                    var path = req.app.get('current_directory');
+                    res.render(path+'/pages/faq_page',{title:title,arr1:arr1,arr2:arr2});
+                    resolve(data);  
+                }
+            })
+        });
+    };
+    retriveData(req).catch((e)=>{});
+       /* var title = "Frequently Ask Questions"
         var size = 2;
         var arr = [['Consectetur adipiscing elit?','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.'],['Consectetur adipiscing elit?','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.']];
 
          var path = req.app.get('current_directory');
-         res.render(path+'/pages/faq_page',{title:title,size:size,arr:arr});
+         res.render(path+'/pages/faq_page',{title:title,size:size,arr:arr});*/
 
 }
 // Routes sending pages Link
 
 function getPage1link(req,res){
 
-	console.log("Page1 link");
-	var path = req.app.get('absolutepaths');
-	console.log("paths",path);
+    console.log("Page1 link");
+    var path = req.app.get('absolutepaths');
+    console.log("paths",path);
   let globalResObj = {
         responseCode: "",
         message : "",
@@ -306,7 +345,7 @@ function getPage1link(req,res){
            "link": path+"/mobile/getpage1"
         }
 
-    }	
+    }   
     res.json(globalResObj);
 }
 
@@ -322,37 +361,37 @@ function getQuessionarePageLink(req,res){
            "link": path+"/mobile/quessionarepage"
         }
 
-    }	
+    }   
 
     
 
     res.json(globalResObj);
 }
 function getCongratulationPageLink(req,res){
-	console.log("I am in getCongratulationPageLink");
-	var path  = req.app.get('absolutepaths');
-	let globalResObj = {
-		responseCode: "",
-		message: "",
-		response: {
-			"link":path + "/mobile/getcongratulationpage"
-		}
-	}
-	 res.json(globalResObj);
+    console.log("I am in getCongratulationPageLink");
+    var path  = req.app.get('absolutepaths');
+    let globalResObj = {
+        responseCode: "",
+        message: "",
+        response: {
+            "link":path + "/mobile/getcongratulationpage"
+        }
+    }
+     res.json(globalResObj);
 }
 
 module.exports = {
 
-	getPage1: getPage1,
-	getQuessionarePage: getQuessionarePage,
-	getCongratulationPage:getCongratulationPage,
-	getPage1link:getPage1link,
-	getQuessionarePageLink:getQuessionarePageLink,
-	getCongratulationPageLink:getCongratulationPageLink,
+    getPage1: getPage1,
+    getQuessionarePage: getQuessionarePage,
+    getCongratulationPage:getCongratulationPage,
+    getPage1link:getPage1link,
+    getQuessionarePageLink:getQuessionarePageLink,
+    getCongratulationPageLink:getCongratulationPageLink,
     AboutOZPage:AboutOZPage,
     termsAndCondition:termsAndCondition,
     faq:faq,
     seetingScreen:seetingScreen,
     privacy_Policy:privacy_Policy
-	
+    
 }
