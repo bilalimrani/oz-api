@@ -213,7 +213,7 @@ function AboutOZPage(req,res){
         });
     };
     retriveData(req).catch((e)=>{});
-}
+} 
 
 function privacy_Policy(req,res){
     console.log("I am in About privacy_Policy Page")
