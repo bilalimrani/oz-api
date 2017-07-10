@@ -9,7 +9,7 @@ const configuration = require('../config')();
 let SENDGRID_APIKEY = configuration.sendGridApiKEY;
 
 var helper = require('sendgrid').mail;
-/**
+/** 
  * Common Methods
  */
 
