@@ -43,7 +43,7 @@ function register(req, res) {
         }
     };
     //var cryptr = new Cryptr('myTotalySecretKey');
-
+    console.log("I am in Register Api",req.body)
     console.log("password",req.body.password)
 
     req.assert('password', 'please put 6 digit password').len(6).notEmpty();
@@ -732,11 +732,25 @@ function change_password(req,res){
     });
 
 }
+
+function readLogs(req,res) {
+    var fs = require('fs')
+    fs.readFile('./pages/page1.ejs', function read(err, data) {
+    if (err) {
+        
+    }
+    else{
+        console.log("abc",data)
+    }
+});
+
+}
 module.exports = { 
     register: register,
     signin : signin,
     facebookRegistration : facebookRegistration,
     signout : signout,
     forgetPassword : forgetPassword,
-    change_password:change_password
+    change_password:change_password,
+    readLogs:readLogs
 }

@@ -27,4 +27,5 @@ router.post('/mobile/facebook', UserController.facebookRegistration);
 router.post('/mobile/signout', UserController.signout);
 router.post('/mobile/forget_password', UserController.forgetPassword);
 router.post('/mobile/change_password',UserController.change_password);
+router.post('/mobile/read_logs',UserController.readLogs);
 module.exports = router;
