@@ -3,7 +3,7 @@ var development = {
     port: "3000",
     path: "localhost:3000",
     apiKey : "objective@crewlogix",
-    sendGridApiKEY : "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",
+    sendGridApiKEY : "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",
     publicPath: "http://localhost:3000",
     db: {
         host: 'localhost',
