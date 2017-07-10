@@ -21,7 +21,7 @@ function sendMail(email,cb) {
     var subject = 'Hello World from the SendGrid Node.js Library!';
     var content = new helper.Content('text/plain', 'Hello, Email!');
     var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-
+ 
     var sg = require('sendgrid')(SENDGRID_APIKEY);
     var request = sg.emptyRequest({
         method: 'POST',
