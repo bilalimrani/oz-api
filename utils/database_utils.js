@@ -71,11 +71,22 @@ function updateMultiRecord(db,query,data,callback){
     });
 }
 
+function deleteRecord(db,query,data,callback){
+    db.query(query,data,function(err,result){
+        if(err){
+            callback(err,null);
+        }
+        else{
+            callback(null,result);
+        }
+    })
+}
 
 
 module.exports = {
     getSingleRecord : getSingleRecord,
     insertSingleRecord : insertSingleRecord,
     updateMultiRecord : updateMultiRecord,
-    getAllRecord : getAllRecord
+    getAllRecord : getAllRecord,
+    deleteRecord : deleteRecord
 };

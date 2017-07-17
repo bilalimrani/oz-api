@@ -66,7 +66,7 @@ router.put('/signin',signInValidator,(req,res)=>{
     })
     .catch((e)=>{
         console.log("Helo err")
-        res.status(400).json(e);
+       res.status(400).json(REST_API_STATUS_CODE.badrequest);
     })
 
 });

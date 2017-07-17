@@ -47,8 +47,30 @@ app.get('/',(req,res)=>{
     res.status(200).json({message:"Objective Zero DEV API is working :)"});
 })
 const mobileRegister = require('./oz-api/register/register');
+const mobileAssignUserName = require('./oz-api/assignUsername/assignusername');
+const mobileAssignUserRole = require('./oz-api/AssignUserrole/assignuserrole');
+const mobileBecomeAmbassadorPages = require('./oz-api/BecomeAmbassadorPages/becomeambassadorpages');
+const mobileForgetPassword = require('./oz-api/forgetPassword/forgetPassword');
+const mobileGetAmbassadorData = require('./oz-api/GetAmbassadorData/getAmbassadorData');
+const mobileSignIn = require('./oz-api/signIn/signIn');
+const mobileSignOut = require('./oz-api/signOut/signout');
+const mobileTwilioChat = require('./oz-api/TwilioChat/twiliochat');
+const mobileUpdateAMbassadorProfile = require('./oz-api/UpdateAmbassadorProfile/updateAmbassadorProfile');
+const mobileFacebookRegistration = require('./oz-api/FacebookRegistration/facebookregistration')
+const mobileAddToFavourite = require('./oz-api/AddToFavourite/addtofavourite')
 
 app.use('/mobile', mobileRegister)
+app.use('/mobile', mobileAssignUserName)
+app.use('/mobile', mobileAssignUserRole)
+app.use('/mobile', mobileBecomeAmbassadorPages)
+app.use('/mobile', mobileForgetPassword)
+app.use('/mobile', mobileGetAmbassadorData)
+app.use('/mobile', mobileSignIn)
+app.use('/mobile', mobileSignOut)
+app.use('/mobile', mobileTwilioChat)
+app.use('/mobile', mobileUpdateAMbassadorProfile)
+app.use('/mobile', mobileFacebookRegistration)
+app.use('/mobile', mobileAddToFavourite)
 
 
 
@@ -60,7 +82,7 @@ var httpServer = http.createServer(app);
 httpServer.listen(configuration.port, configuration.host, function () {
     console.log('objective zero is working on ', configuration.host, ':', configuration.port);
 });
-//
+
 //httpsServer.listen(configuration.port, configuration.host, function () {
 //    console.log('objective zero is working on ', configuration.host, ':', configuration.port);
 //});
