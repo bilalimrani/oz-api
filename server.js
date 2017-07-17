@@ -48,7 +48,7 @@ app.get('/',(req,res)=>{
 })
 const mobileRegister = require('./oz-api/register/register');
 const mobileAssignUserName = require('./oz-api/assignUserName/assignusername');
-const mobileAssignUserRole = require('./oz-api/AssignUserrole/assignuserrole');
+const mobileAssignUserRole = require('./oz-api/AssignUserRole/assignuserrole');
 const mobileBecomeAmbassadorPages = require('./oz-api/BecomeAmbassadorPages/becomeambassadorpages');
 const mobileForgetPassword = require('./oz-api/forgetPassword/forgetPassword');
 const mobileGetAmbassadorData = require('./oz-api/GetAmbassadorData/getAmbassadorData');
