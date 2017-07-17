@@ -22,7 +22,7 @@ function getSingleRecord(db,query,data,callback){
         });
     //db.end();
 }
-
+ 
 function getAllRecord(db,query,callback){
     //db.connect();
     db.query(query,

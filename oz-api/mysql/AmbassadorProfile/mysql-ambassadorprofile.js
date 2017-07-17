@@ -22,7 +22,7 @@ var AmbassadorProfile = function(){
 					var spliter = file.mimetype.split('/');
 					callback(null, file.fieldname + '_' + Date.now() +'.'+ spliter[1])
 				}
-			})
+			}) 
 			var upload = multer({
 				storage: storage,
 				fileFilter: function(req, file, callback) {

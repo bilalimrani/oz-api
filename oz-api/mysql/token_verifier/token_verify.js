@@ -21,6 +21,6 @@ var verifier = function(){
 				})
 			})
 		}
-	}
+	} 
 }
 module.exports = new verifier;

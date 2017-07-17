@@ -25,7 +25,7 @@ var SignIn = function() {
                         resolve(data);
                     }
                 })
-            })
+            }) 
         },
         newLogin : function(params){
             let access_token = commonUtil.randomString();

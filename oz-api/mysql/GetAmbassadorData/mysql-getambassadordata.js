@@ -18,7 +18,7 @@ var GetData = function(){
 					else{
 						resolve(data);
 					}
-				});
+				}); 
 			});
 
 		}

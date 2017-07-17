@@ -23,7 +23,7 @@ let fbValidator = (req,res,next) =>{
     
     
 }
-
+ 
 router.post('/facebook',fbValidator,(req,res)=>{
 	console.log('I am in facebookRegistration Router')
 	let reqparams = req.body;

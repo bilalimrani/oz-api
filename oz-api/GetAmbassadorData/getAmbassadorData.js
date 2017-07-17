@@ -22,4 +22,4 @@ router.get('/ambassadorData',verifier_function.verifier,(req,res)=>{
 	})
 });
 
-module.exports = router;
+module.exports = router; 

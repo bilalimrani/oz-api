@@ -12,7 +12,7 @@ router.get('/becomeambassador',verifier_function.verifier,(req,res)=>{
 });
 router.get('/quessionarepage',verifier_function.verifier,(req,res)=>{
 	console.log("I am in Quessionare Page")
-
+ 
 	let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
     let qs2 = "In the context of group counseling,members that are high in conformity also tend to be high in:";
     let ans1_1 = "formal educational experiances XYZ"

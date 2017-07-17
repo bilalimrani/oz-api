@@ -18,4 +18,4 @@ var verifier = function(req,res,next){
 
 module.exports = {
 	verifier : verifier
-};
+}; 

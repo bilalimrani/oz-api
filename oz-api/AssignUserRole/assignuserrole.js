@@ -9,7 +9,7 @@ router.put('/assignUserRole',verifier_function.verifier,(req,res)=>{
 	let reqparams = {
 		user_role : req.body.user_role,
 		access_token : req.headers.access_token
-	}
+	} 
 	let mysqlUserRole = require('../mysql/assignUserRole/mysql-assignuserrole');
 	mysqlUserRole.updateUserRole(reqparams)
 	.then((data)=>{

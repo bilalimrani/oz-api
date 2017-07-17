@@ -21,7 +21,7 @@ var FacebookRegistration = function(){
 					}
 					else{
 						resolve(data);
-					}
+					} 
 				});
 			});
 		},

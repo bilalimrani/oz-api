@@ -20,7 +20,7 @@ var Verify = function() {
                     else{
                         resolve(data);
                     }
-                });
+                }); 
             });
         },
         activateEmail : function(params){

@@ -34,4 +34,4 @@ router.put('/forget_password',verifier_function.verifier,(req,res)=>{
 		res.status(400).json(REST_API_STATUS_CODE.badrequest);
 	})
 })
-module.exports = router;
+module.exports = router; 

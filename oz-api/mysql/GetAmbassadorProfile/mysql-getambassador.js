@@ -16,7 +16,7 @@ var GetProfile = function(){
 				databaseUtil.getSingleRecord(mysql,query,dataObj,(err,data)=>{
 					if(err){
 						reject(err);
-					}
+					} 
 					else{
 						resolve(data);
 					}

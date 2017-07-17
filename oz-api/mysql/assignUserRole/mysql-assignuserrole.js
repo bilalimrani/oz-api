@@ -17,7 +17,7 @@ var AssignUserRole = function(){
 					}
 					else{
 						resolve(data);
-					}
+					} 
 				});
 			});
 		},

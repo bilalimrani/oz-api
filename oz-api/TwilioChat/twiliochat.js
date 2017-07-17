@@ -22,7 +22,7 @@ const FCM = require('fcm-push');
 router.post('/twilio_voice',verifier_function.verifier,(req,res)=>{
 	let receiver_deviceId;
   var accessToken = new AccessToken(
-    ACCOUNT_SID,
+    ACCOUNT_SID, 
     API_KEY_SID,
     API_KEY_SECRET
   );

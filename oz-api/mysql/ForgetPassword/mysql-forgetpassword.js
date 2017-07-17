@@ -20,7 +20,7 @@ var updateVerification = function(params){
                     data = "verified";
                     resolve(data);
                     }
-                })
+                }) 
         })
 }
 

@@ -40,7 +40,7 @@ const configuration = require('./config')();
 //
 //});
 //let mysql_connection = require('./oz-api/mysql/mysql-client');
-
+ 
 
 app.get('/',(req,res)=>{
     console.log('OZ-DEV-API: GET  ',req.url )

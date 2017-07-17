@@ -21,7 +21,7 @@ router.put('/updateambassador',verifier_function.verifier,(req,res)=>{
 	.catch((err)=>{
 		res.status(400).json(REST_API_STATUS_CODE.badrequest);
 	})
-})
+}) 
 router.get('/getambassadorprofile',verifier_function.verifier,(req,res)=>{
 	console.log("I am in Get AmbassadorProfile Router");
 	let mysqlgetAmbassador = require('../mysql/GetAmbassadorProfile/mysql-getambassador');

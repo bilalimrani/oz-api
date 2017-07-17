@@ -22,7 +22,7 @@ let registerValidator = (req,res,next) =>{
         if(result){
             next();
         }
-        else{
+        else{ 
             res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
         }
         

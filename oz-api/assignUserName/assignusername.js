@@ -4,7 +4,7 @@ const validator = require('lodash');
 const REST_API_STATUS_CODE = require("../../responses");
 const verifier_function = require("../verifier");
 router.put('/assign_username',verifier_function.verifier,(req,res)=>{
-
+ 
 	console.log("I am in AssignUserName Router");
 	const mysqlUsername = require('../mysql/assignUserName/mysql-assignusername');
 	mysqlUsername.checkUserNameAvalibility(req)
@@ -34,7 +34,7 @@ router.put('/assign_username',verifier_function.verifier,(req,res)=>{
 		}
 	})
 	.catch((err)=>{
-		res.status(400).json(err);
+		res.status(400).json(REST_API_STATUS_CODE.badrequest);
 	})
 })
 module.exports = router;

@@ -22,6 +22,6 @@ var signOut = function(){
 				})
 			})
 		}
-	}
+	} 
 }
 module.exports = new signOut;

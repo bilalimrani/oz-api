@@ -19,7 +19,7 @@ var AssignUserName = function(){
 					}
 					else{
 						resolve(data);
-					}
+					} 
 				});
 			});
 		},
