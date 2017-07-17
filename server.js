@@ -47,7 +47,7 @@ app.get('/',(req,res)=>{
     res.status(200).json({message:"Objective Zero DEV API is working :)"});
 })
 const mobileRegister = require('./oz-api/register/register');
-const mobileAssignUserName = require('./oz-api/assignUsername/assignusername');
+const mobileAssignUserName = require('./oz-api/assignUserName/assignusername');
 const mobileAssignUserRole = require('./oz-api/AssignUserrole/assignuserrole');
 const mobileBecomeAmbassadorPages = require('./oz-api/BecomeAmbassadorPages/becomeambassadorpages');
 const mobileForgetPassword = require('./oz-api/forgetPassword/forgetPassword');
