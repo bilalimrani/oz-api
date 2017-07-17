@@ -1,7 +1,7 @@
 var development = {
     host: "132.148.129.180",
-    port: "3000",
-    path: "localhost:3000",
+    port: "13000",
+    path: "132.148.129.180:13000",
     apiKey : "objective@crewlogix",
     sendGridApiKEY : "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",
     publicPath: "http://localhost:3000",
