@@ -27,7 +27,7 @@ router.get('/getambassadorprofile',verifier_function.verifier,(req,res)=>{
 	let mysqlgetAmbassador = require('../mysql/GetAmbassadorProfile/mysql-getambassador');
 	mysqlgetAmbassador.getData(res.locals.id)
 	.then((data)=>{
-		console.log("Data found",data)
+		console.log("Data found")
 		if(validator.isEmpty(data)){
 			res.json(REST_API_STATUS_CODE.no_content_found);
 		}

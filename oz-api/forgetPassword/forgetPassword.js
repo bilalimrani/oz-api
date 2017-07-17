@@ -10,7 +10,7 @@ router.put('/forget_password',verifier_function.verifier,(req,res)=>{
 	let mysqlForgetPassword = require('../mysql/ForgetPassword/mysql-forgetpassword');
 	mysqlForgetPassword.forgetPassword(reqparams)
 	.then((data)=>{
-		console.log("data     ...... . .. . . . .. . ",data)
+		console.log("data     ...... . .. . . . .. . ")
 		if(data == 'code'){
 			res.json({responseCode:200,message:"An email sent to your email",response:"{}"});
 		}

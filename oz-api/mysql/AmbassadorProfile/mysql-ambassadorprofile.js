@@ -45,7 +45,7 @@ var AmbassadorProfile = function(){
 				{
 				console.log("Ok problem solved");
 				}
-					console.log("Multer Data",img_path)
+					console.log("Multer Data")
 					resolve(img_path);
 				})
 			});

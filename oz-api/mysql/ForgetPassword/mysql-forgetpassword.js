@@ -69,12 +69,12 @@ var ForgetPassword = function(){
                             	else{
                             		if(data.info.affectedRows == '1'){
                             			data = "code";
-                            			console.log(data);
+                            		
                                 		resolve(data);
                             		}
                             		else{
                             			data = "not found";
-                            			console.log(data);
+                            	
                                 		resolve(data);
                             		}
                             		

@@ -19,7 +19,7 @@ var SignIn = function() {
             return new Promise((resolve,reject)=>{
                 databaseUtil.getSingleRecord(mysql,query,dataObj,function(err,data){
                     if(err){
-                        console.log("errors")
+                      
                         reject(err);
                     }else{
                         resolve(data);

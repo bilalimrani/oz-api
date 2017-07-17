@@ -10,7 +10,7 @@ router.post('/add_to_favourite',verifier_function.verifier,(req,res)=>{
 	let mobileAddToFavourite = require('../mysql/AddToFavourite/mysql-addtofavourite');
 	mobileAddToFavourite.checkIfAlreadyFavourite(reqparams,res.locals.id)
 	.then((data)=>{
-		console.log("Data Received from Database",data)
+		console.log("Data Received from Database")
 		if(validator.isEmpty(data)){
 			mobileAddToFavourite.checkAmbassadorExistence(reqparams)
 			.then((data)=>{
@@ -33,7 +33,7 @@ router.post('/add_to_favourite',verifier_function.verifier,(req,res)=>{
 		else{
 			mobileAddToFavourite.deleteRecord(reqparams,res.locals.id)
 			.then((data)=>{
-				console.log("Found Data after Deletion",data)
+				console.log("Found Data after Deletion")
 				if(data.info.affectedRows === '1'){
 					res.json({code : 201, message: "Ambassador unfavourite Sucessfully",response:{}});
 				}

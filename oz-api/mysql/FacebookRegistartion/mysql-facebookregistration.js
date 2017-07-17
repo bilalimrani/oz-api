@@ -12,7 +12,7 @@ var FacebookRegistration = function(){
 			let dataObj = {
 				fb_id : params.fb_id,
 			}
-			console.log("Mydata Get",dataObj)
+			console.log("Mydata Get")
 			let query = 'select * from users where fb_id=:fb_id'
 			return new Promise((resolve,reject)=>{
 				databaseUtil.getSingleRecord(mysql,query,dataObj,(err,data)=>{
