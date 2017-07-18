@@ -71,9 +71,9 @@ app.use('/mobile', mobileTwilioChat)
 app.use('/mobile', mobileUpdateAMbassadorProfile)
 app.use('/mobile', mobileFacebookRegistration)
 app.use('/mobile', mobileAddToFavourite)
+ 
 
-
-
+ 
 var httpServer = http.createServer(app);
 //var httpsServer = https.createServer(credentials, app);
 
