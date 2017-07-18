@@ -56,7 +56,7 @@ router.post('/register',registerValidator,(req,res)=>{
 			
         }else{
             res.json(REST_API_STATUS_CODE.already_reported);
-        }
+        } 
     })
     .catch((err)=>{
         res.status(400).json(REST_API_STATUS_CODE.badrequest);
