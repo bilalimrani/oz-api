@@ -49,7 +49,7 @@ router.put('/signin',signInValidator,(req,res)=>{
             res.status(REST_API_STATUS_CODE.ok_userAlreadyLogIn.code).json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
         }
        else{
-        console.log("hello")
+
             mysqlSignIn.newLogin(reqParams)
             .then((data)=>{
                 if(data.info.affectedRows == '1'){
@@ -59,6 +59,10 @@ router.put('/signin',signInValidator,(req,res)=>{
                         REST_API_STATUS_CODE.ok_userAlreadyLogIn.message = "User LogIn Sucessfully"
                         res.status(REST_API_STATUS_CODE.ok_userAlreadyLogIn.code).json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
                     })
+                }
+                else{
+                    console.log('finallyyyyyyyyyy')
+                    res.json({code : 201 , message : 'Your Account is no activate yet,An email is send please click on it',response : {}});
                 }
                
             })

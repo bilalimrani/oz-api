@@ -29,12 +29,14 @@ var SignIn = function() {
         },
         newLogin : function(params){
             let access_token = commonUtil.randomString();
-            var query = "update users set access_token=:access_token,deviceId=:deviceId,deviceType=:deviceType where email=:email";
+            var query = "update users set access_token=:access_token,deviceId=:deviceId,deviceType=:deviceType where email=:email and email_status=:email_status";
             var dataObj = {
                 email : params.email,
                 access_token : access_token,
                 deviceId : params.deviceId,
-                deviceType : params.deviceType
+                deviceType : params.deviceType,
+                email_status : 'true'
+
             }
             return new Promise((resolve,reject)=>{
                 databaseUtil.updateMultiRecord(mysql,query,dataObj,function(err,data){

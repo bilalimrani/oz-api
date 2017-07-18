@@ -51,7 +51,7 @@ router.post('/register',registerValidator,(req,res)=>{
         }
     })
     .catch((e)=>{
-        res.status(400).json(e);
+        res.status(400).json(REST_API_STATUS_CODE.badrequest);
     });
 })
 router.get('/verify',(req,res)=>{

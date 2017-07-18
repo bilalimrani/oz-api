@@ -3,13 +3,13 @@ var development = {
     port: "13000",
     path: "132.148.129.180:13000",
     apiKey : "objective@crewlogix",
-    sendGridApiKEY : "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",
+    sendGridApiKEY : "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",
     publicPath: "http://localhost:3000",
     db: {
         host: 'localhost',
-        user: 'objective_zero',
-        password: 'objectivezero',
-        db: 'objective_zero'
+        user: 'dev_oz',
+        password: 'dev_oz',
+        db: 'dev_oz'
     },
     baseURL : "localhost:3000"
 };

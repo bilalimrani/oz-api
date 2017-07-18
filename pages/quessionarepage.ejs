@@ -6,7 +6,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type='text/javascript'>
+           function getVal(){
+           	window.location = 'oz:quessionare'
+           }
 
+        </script>
 
 </head>
 <body>
@@ -24,7 +29,7 @@
 	<label><input type="checkbox" name="" value="">&nbsp<%=chk1_3%></label><br/>
 	<label><input type="checkbox" name="" value="">&nbsp<%=chk1_4%></label><br/>
 
-	<button class="btn btn-primary center-block" style="width: 80%; margin-top: 70px;" onclick="window.location.replace('http://<%=host%>:<%=port%>/mobile/congratulationpage?token=<%=token%>')">Submit</button>
+	<button class="btn btn-primary center-block" style="width: 80%; margin-top: 70px;" onclick="getVal()">Submit</button>
     </div>
  	
  	

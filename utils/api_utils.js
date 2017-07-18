@@ -14,12 +14,12 @@ var helper = require('sendgrid').mail;
  */
 
 
-function sendMail(email,cb) {
+function sendMail(email,subjects,link,cb) {
 
-    var fromEmail = new helper.Email('support@objectivezero.org');
+    var fromEmail = new helper.Email('ghazanfar.crewlogix@gmail.com');
     var toEmail = new helper.Email(email);
-    var subject = 'Hello World from the SendGrid Node.js Library!';
-    var content = new helper.Content('text/plain', 'Hello, Email!');
+    var subject = subjects;
+    var content = new helper.Content('text/html', link);
     var mail = new helper.Mail(fromEmail, subject, toEmail, content);
  
     var sg = require('sendgrid')(SENDGRID_APIKEY);
@@ -45,7 +45,7 @@ function sendMail(email,cb) {
 
 function sendMailTest(email,data,cb) {
 
-    var fromEmail = new helper.Email('support@objectivezero.org');
+    var fromEmail = new helper.Email('ghazanfar.crewlogix@gmail.com');
     var toEmail = new helper.Email(email);
     var subject = 'Hello please find your code to reset your password'+data.passCode;
     var content = new helper.Content('text/plain', 'Hello, Email!');

@@ -19,6 +19,10 @@
             	//ok.performClick('congratulation')
                 
             }
+            function getValue(){
+            	window.location = 'oz:become_ambassador'
+            }
+
         </script>
 </head>
 <body>
@@ -42,7 +46,7 @@
 	    <p  style="text-align: center;margin: 0">
 	   	minutes a week
 	   </p>
-	   <button class="btn btn-warning center-block " style="width: 80% ; margin-top: 16px; padding: 15px" onclick="window.location.replace('http://<%=host%>:<%=port%>/mobile/quessionarepage?token=<%=token%>')" >BECOME AN AMBASSADOR</button>
+	   <button class="btn btn-warning center-block " style="width: 80% ; margin-top: 16px; padding: 15px" onclick="getValue()" >BECOME AN AMBASSADOR</button>
 	   <button class="btn btn-primary center-block " style="width: 80% ;margin-top: 10px;padding: 15px" onclick="performClick()" >CONTRIBUTE</button>
 
 	   
