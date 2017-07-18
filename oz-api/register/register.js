@@ -45,7 +45,13 @@ router.post('/register',registerValidator,(req,res)=>{
                 mysqlRegister.sendMail(data)
                 .then((data)=>{res.status(REST_API_STATUS_CODE.created.code).json(REST_API_STATUS_CODE.created)
                 })
+				.catch((err)=>{
+					res.status(400).json(REST_API_STATUS_CODE.badrequest);
+				})
             })
+			.catch((err)=>{
+				res.status(400).json(REST_API_STATUS_CODE.badrequest);
+			})
         }else{
             res.status(REST_API_STATUS_CODE.already_reported.code).json(REST_API_STATUS_CODE.already_reported);
         }
