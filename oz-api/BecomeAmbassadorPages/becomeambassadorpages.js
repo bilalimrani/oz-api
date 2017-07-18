@@ -114,7 +114,7 @@ router.get('/terms_condition_page',(req,res)=>{
 	})
 	.catch((err)=>{
 		res.status(400).json(REST_API_STATUS_CODE.badrequest);
-	})
+	}) 
 })
 router.get('/faq_page',(req,res)=>{
 	 console.log('I am in faq_page router')
