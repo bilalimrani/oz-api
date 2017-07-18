@@ -41,8 +41,8 @@ router.post('/register',registerValidator,(req,res)=>{
     .then((data)=>{
         if(validator.isEmpty(data)){
             mysqlRegister.insertUser(reqParams)
-            .then((data)=>{
-                mysqlRegister.sendMail(data)
+            .then((dataObj)=>{
+                mysqlRegister.sendMail(dataObj)
                 .then((data)=>{res.json(REST_API_STATUS_CODE.created)
 				
 				})
