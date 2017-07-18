@@ -23,7 +23,7 @@ var Register = function() {
 		            	}
             	});
 
-            });
+            }); 
            
  		},
  		insertUser: function(params){
