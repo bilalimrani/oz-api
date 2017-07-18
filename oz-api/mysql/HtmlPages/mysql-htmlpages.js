@@ -58,6 +58,25 @@ var Pages = function(){
 					}
 				});
 			});
+		},
+		common : function(params){       
+        var dataobj = {
+            section_type : params
+        }
+
+        let query = "Select *from sections where section_type = :section_type";
+        return new Promise((resolve,reject)=>{
+          
+            databaseUtil.getSingleRecord(mysql,query,dataobj,function(err,data){
+                if(err){
+                   
+                    reject(err);
+                }else{
+                    
+                   resolve(data);  
+                }
+            })
+        });
 		}
 	}
 }
