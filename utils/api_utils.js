@@ -14,12 +14,12 @@ var helper = require('sendgrid').mail;
  */
 
 
-function sendMail(email,subjects,link,cb) {
+function sendMail(email,subjects,links,cb) {
 
     var fromEmail = new helper.Email('ghazanfar.crewlogix@gmail.com');
     var toEmail = new helper.Email(email);
     var subject = subjects;
-    var content = new helper.Content('text/html', link);
+    var content = new helper.Content('text/html', links);
     var mail = new helper.Mail(fromEmail, subject, toEmail, content);
  
     var sg = require('sendgrid')(SENDGRID_APIKEY);

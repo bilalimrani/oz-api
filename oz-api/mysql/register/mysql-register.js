@@ -51,11 +51,11 @@ var Register = function() {
  		},
  		sendMail: function(data){
  			console.log("Email Data ",data.email)
- 			let link="http://"+configration.path+"/mobile/verify?id="+data.email_verification_code;
+ 			let links ="http://"+configration.path+"/mobile/verify?id="+data.email_verification_code;
  			let subject = "Please confirm your Email account";
 
  			return new Promise((resolve,reject)=>{
- 					apiUtil.sendMail(data.email,subject,link,function(err,result){
+ 					apiUtil.sendMail(data.email,subject,links,function(err,result){
  						if(err){
 
  							reject(err);

@@ -44,8 +44,9 @@ router.post('/register',registerValidator,(req,res)=>{
             .then((data)=>{
                 mysqlRegister.sendMail(data)
                 .then((data)=>{res.status(REST_API_STATUS_CODE.created.code).json(REST_API_STATUS_CODE.created)
-                })
 				
+				})
+			
             })
 			
         }else{
