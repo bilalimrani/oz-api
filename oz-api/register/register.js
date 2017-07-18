@@ -43,14 +43,14 @@ router.post('/register',registerValidator,(req,res)=>{
             mysqlRegister.insertUser(reqParams)
             .then((data)=>{
                 mysqlRegister.sendMail(data)
-                .then((data)=>{res.status(REST_API_STATUS_CODE.created.code).json(REST_API_STATUS_CODE.created)
+                .then((data)=>{res.json(REST_API_STATUS_CODE.created)
 				
 				})
 			
             })
 			
         }else{
-            res.status(REST_API_STATUS_CODE.already_reported.code).json(REST_API_STATUS_CODE.already_reported);
+            res.json(REST_API_STATUS_CODE.already_reported);
         }
     })
     .catch((err)=>{
