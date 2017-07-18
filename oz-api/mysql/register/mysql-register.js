@@ -20,7 +20,7 @@ var Register = function() {
 		            	}
 		            	else{
 		            		resolve(data);	
-		            	}
+		            	} 
             	});
 
             }); 
