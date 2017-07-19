@@ -19,7 +19,7 @@ router.put('/assignUserRole',verifier_function.verifier,(req,res)=>{
 					res.json(REST_API_STATUS_CODE.notModified);
 				}
 				else{
-					REST_API_STATUS_CODE.sucess.response = data;
+					REST_API_STATUS_CODE.sucess.response = data[0];
 					res.json(REST_API_STATUS_CODE.sucess);
 				}
 			})	

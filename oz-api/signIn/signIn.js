@@ -55,7 +55,7 @@ router.put('/signin',signInValidator,(req,res)=>{
                 if(data.info.affectedRows == '1'){
                     mysqlSignIn.returnResponse(reqParams)
                     .then((data)=>{
-                        REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data;
+                        REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data[0];
                         REST_API_STATUS_CODE.ok_userAlreadyLogIn.message = "User LogIn Sucessfully"
                         res.status(REST_API_STATUS_CODE.ok_userAlreadyLogIn.code).json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
                     })
