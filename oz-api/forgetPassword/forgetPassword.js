@@ -4,7 +4,7 @@ const validator = require('lodash');
 const REST_API_STATUS_CODE = require("../../responses");
 const verifier_function = require("../verifier");
 const configration = require('../../config')();
-router.put('/forget_password',verifier_function.verifier,(req,res)=>{
+router.put('/forget_password',(req,res)=>{
 	let reqparams = req.body;
 	console.log("I am in forget_password router");
 	let mysqlForgetPassword = require('../mysql/ForgetPassword/mysql-forgetpassword');
