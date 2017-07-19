@@ -45,7 +45,7 @@ router.put('/signin',signInValidator,(req,res)=>{
             res.json(REST_API_STATUS_CODE.no_content_found);
         }
         else if(data[0].deviceId == reqParams.deviceId && data[0].deviceType == reqParams.deviceType && data[0].access_token != ''){
-            REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data;
+            REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data[0];
             res.json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
         }
        else{
