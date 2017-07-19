@@ -12,22 +12,22 @@ router.put('/forget_password',verifier_function.verifier,(req,res)=>{
 	.then((data)=>{
 		console.log("data     ...... . .. . . . .. . ")
 		if(data == 'code'){
-			res.json({code:200,message:"An email sent to your email",response:"{}"});
+			res.json({responseCode:200,message:"An email sent to your email",response:"{}"});
 		}
 		else if(data == 'Not Verified'){
-			res.json({code:204,message:"sorry code not match with database",response:{}});
+			res.json({responseCode:204,message:"sorry code not match with database",response:{}});
 		}
 		else if(data == 'verified'){
-			res.json({code:200,message:"code varified sucessfully" , response:{}});
+			res.json({responseCode:200,message:"code varified sucessfully" , response:{}});
 		}
 		else if(data === 'range'){
-			res.json({code:206,message:"Please Size must be greater than 6" , response:{}});
+			res.json({responseCode:206,message:"Please Size must be greater than 6" , response:{}});
 		}
 		else if(data === 'sucess'){
-			res.json({code:200,message:"password Change sucessfully" , response:{}});
+			res.json({responseCode:200,message:"password Change sucessfully" , response:{}});
 		}
 		else if(data === 'not found'){
-			res.json({code:204,message:"No Account Found",response:"{}"});
+			res.json({responseCode:204,message:"No Account Found",response:"{}"});
 		}
 	})
 	.catch((err)=>{

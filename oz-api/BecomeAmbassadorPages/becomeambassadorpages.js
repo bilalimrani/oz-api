@@ -88,7 +88,7 @@ router.get('/about_oz_page',(req,res)=>{
                     res.render('../pages/about_oz',{title:title,description1:description1});
                 }
                 else{
-                	res.json({code:401,message:"No Record FOund",response : {}})
+                	res.json({responseCode:401,message:"No Record FOund",response : {}})
                 }
 	})
 	.catch((err)=>{
@@ -109,7 +109,7 @@ router.get('/terms_condition_page',(req,res)=>{
                     res.render('../pages/terms_and_condition_page',{title:title,description1:description1});
                 }
                 else{
-                	res.json({code:401,message:"No Record FOund",response : {}})
+                	res.json({responseCode:401,message:"No Record FOund",response : {}})
                 }
 	})
 	.catch((err)=>{
@@ -132,7 +132,7 @@ router.get('/privacy_page',(req,res)=>{
                     res.render('../pages/terms_and_condition_page',{title:title,description1:description1});
                 }
                 else{
-                	res.json({code:401,message:"No Record FOund",response : {}})
+                	res.json({responseCode:401,message:"No Record FOund",response : {}})
                 }
 	})
 	.catch((err)=>{

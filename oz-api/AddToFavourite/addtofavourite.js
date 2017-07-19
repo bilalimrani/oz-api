@@ -15,7 +15,7 @@ router.post('/add_to_favourite',verifier_function.verifier,(req,res)=>{
 			mobileAddToFavourite.checkAmbassadorExistence(reqparams)
 			.then((data)=>{
 				if(validator.isEmpty(data)){
-					res.json({code : 204, message: "No Ambassador Found",response:{}});
+					res.json({responseCode : 204, message: "No Ambassador Found",response:{}});
 				}
 				else{
 					mobileAddToFavourite.insertToList(reqparams,res.locals.id)
@@ -35,7 +35,7 @@ router.post('/add_to_favourite',verifier_function.verifier,(req,res)=>{
 			.then((data)=>{
 				console.log("Found Data after Deletion")
 				if(data.info.affectedRows === '1'){
-					res.json({code : 201, message: "Ambassador unfavourite Sucessfully",response:{}});
+					res.json({responseCode : 201, message: "Ambassador unfavourite Sucessfully",response:{}});
 				}
 				else{
 					res.status(400).json(REST_API_STATUS_CODE.badrequest);

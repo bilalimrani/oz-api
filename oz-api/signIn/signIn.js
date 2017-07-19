@@ -62,7 +62,7 @@ router.put('/signin',signInValidator,(req,res)=>{
                 }
                 else{
                     console.log('finallyyyyyyyyyy')
-                    res.json({code : 201 , message : 'Your Account is no activate yet,An email is send please click on it',response : {}});
+                    res.json({responseCode : 201 , message : 'Your Account is no activate yet,An email is send please click on it',response : {}});
                 }
                
             })
