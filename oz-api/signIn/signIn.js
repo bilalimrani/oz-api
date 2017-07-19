@@ -35,7 +35,7 @@ let signInValidator = (req,res,next) =>{
     
 }
 
-router.put('/signin',signInValidator,(req,res)=>{
+router.post('/signin',signInValidator,(req,res)=>{
     let reqParams = req.body;
     let mysqlSignIn = require('../mysql/signIn/mysql-signin')
     mysqlSignIn.checkAlreadyLogIn(reqParams)
