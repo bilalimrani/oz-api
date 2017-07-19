@@ -18,7 +18,7 @@ router.put('/signout',verifier_function.verifier,(req,res)=>{
 		}
 	})
 	.catch((e)=>{
-		res.status(400).json(REST_API_STATUS_CODE.badrequest);
+		res.json(REST_API_STATUS_CODE.badrequest);
 	})
 });
 module.exports = router; 

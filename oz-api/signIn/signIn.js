@@ -23,12 +23,12 @@ let signInValidator = (req,res,next) =>{
             next();
         }
         else{ 
-            res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
+            res.json(REST_API_STATUS_CODE.param_missing)
         }
         
     }else{
         result = false;
-        res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
+        res.json(REST_API_STATUS_CODE.param_missing)
     }
     
     
@@ -46,7 +46,7 @@ router.put('/signin',signInValidator,(req,res)=>{
         }
         else if(data[0].deviceId == reqParams.deviceId && data[0].deviceType == reqParams.deviceType && data[0].access_token != ''){
             REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data;
-            res.status(REST_API_STATUS_CODE.ok_userAlreadyLogIn.code).json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
+            res.json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
         }
        else{
 
@@ -57,7 +57,7 @@ router.put('/signin',signInValidator,(req,res)=>{
                     .then((data)=>{
                         REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data[0];
                         REST_API_STATUS_CODE.ok_userAlreadyLogIn.message = "User LogIn Sucessfully"
-                        res.status(REST_API_STATUS_CODE.ok_userAlreadyLogIn.code).json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
+                        res.json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
                     })
                 }
                 else{
