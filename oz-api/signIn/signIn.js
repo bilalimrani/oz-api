@@ -23,19 +23,19 @@ let signInValidator = (req,res,next) =>{
             next();
         }
         else{ 
-            res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
+            res.json(REST_API_STATUS_CODE.param_missing)
         }
         
     }else{
         result = false;
-        res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
+        res.json(REST_API_STATUS_CODE.param_missing)
     }
     
     
     
 }
 
-router.put('/signin',signInValidator,(req,res)=>{
+router.post('/signin',signInValidator,(req,res)=>{
     let reqParams = req.body;
     let mysqlSignIn = require('../mysql/signIn/mysql-signin')
     mysqlSignIn.checkAlreadyLogIn(reqParams)
@@ -45,8 +45,8 @@ router.put('/signin',signInValidator,(req,res)=>{
             res.json(REST_API_STATUS_CODE.no_content_found);
         }
         else if(data[0].deviceId == reqParams.deviceId && data[0].deviceType == reqParams.deviceType && data[0].access_token != ''){
-            REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data;
-            res.status(REST_API_STATUS_CODE.ok_userAlreadyLogIn.code).json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
+            REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data[0];
+            res.json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
         }
        else{
 
@@ -55,14 +55,14 @@ router.put('/signin',signInValidator,(req,res)=>{
                 if(data.info.affectedRows == '1'){
                     mysqlSignIn.returnResponse(reqParams)
                     .then((data)=>{
-                        REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data;
+                        REST_API_STATUS_CODE.ok_userAlreadyLogIn.response = data[0];
                         REST_API_STATUS_CODE.ok_userAlreadyLogIn.message = "User LogIn Sucessfully"
-                        res.status(REST_API_STATUS_CODE.ok_userAlreadyLogIn.code).json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
+                        res.json(REST_API_STATUS_CODE.ok_userAlreadyLogIn);
                     })
                 }
                 else{
                     console.log('finallyyyyyyyyyy')
-                    res.json({code : 201 , message : 'Your Account is no activate yet,An email is send please click on it',response : {}});
+                    res.json({responseCode : 201 , message : 'Your Account is no activate yet,An email is send please click on it',response : {}});
                 }
                
             })

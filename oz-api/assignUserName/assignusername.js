@@ -18,7 +18,7 @@ router.put('/assign_username',verifier_function.verifier,(req,res)=>{
 						if(validator.isEmpty(data)){
 							res.json(REST_API_STATUS_CODE.no_content_found);
 						}else{
-							REST_API_STATUS_CODE.sucess.response = data;
+							REST_API_STATUS_CODE.sucess.response = data[0];
 							res.json(REST_API_STATUS_CODE.sucess);
 						}
 					})

@@ -13,7 +13,7 @@ router.put('/updateambassador',verifier_function.verifier,(req,res)=>{
 		.then((data)=>{
 			mysqlUpdateAmbassador.returnResponse(res.locals.id)
 			.then((data)=>{
-				REST_API_STATUS_CODE.sucess.response = data;
+				REST_API_STATUS_CODE.sucess.response = data[0];
 				res.json(REST_API_STATUS_CODE.sucess);
 			})
 		})					             	
@@ -32,7 +32,7 @@ router.get('/getambassadorprofile',verifier_function.verifier,(req,res)=>{
 			res.json(REST_API_STATUS_CODE.no_content_found);
 		}
 		else{
-			REST_API_STATUS_CODE.sucess.response = data;
+			REST_API_STATUS_CODE.sucess.response = data[0];
 			res.json(REST_API_STATUS_CODE.sucess);
 		}
 	})

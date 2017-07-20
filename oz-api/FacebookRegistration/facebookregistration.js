@@ -13,12 +13,12 @@ let fbValidator = (req,res,next) =>{
             next();
         }
         else{
-            res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
+            res.json(REST_API_STATUS_CODE.param_missing)
         }
         
     }else{
         result = false;
-        res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
+        res.json(REST_API_STATUS_CODE.param_missing)
     }
     
     

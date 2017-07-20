@@ -30,7 +30,7 @@ var filters = function(){
 						let Names = "";
 						Object.keys(data).forEach((key)=>{
 								let filters_name = data[key]['filters_name'];
-								console.log('forach function',key)	
+								
 								let name = data[key]['name']
 								//eachValue.push(name)
 								if(filters_name && name){
@@ -47,14 +47,22 @@ var filters = function(){
 							
 						})
 
-						console.log('Filterss ... = ',Filters)
+						console.log('Filterss ... = ',Filters)    
 
 						Object.keys(Filters).forEach((filter)=>{
-							console.log('values = ', Values)
-							console.log('filter = ', filter, ' Values at fitler location ', Values[filter].split('-*-'))
-
+							//console.log('values = ', Values)
+							//console.log('filter Data = ', filter, ' Values at fitler location ', Values[filter].split('-*-'))
+								Filters[filter] = Values[filter].split('-*-');
+								console.log('Length',Filters[filter][Filters[filter].length-2],'---------',Filters[filter].length);
+								if(Filters[filter][Filters[filter].length-1] === ''){
+									let x = Filters[filter].length - 1;
+									Filters[filter].splice(x , 1);
+								} 
+								
 						})
 
+							console.log('Final Filters',Filters)
+							resolve(Filters)
 
 						/*while(count < size){
 							val = data[count].id;

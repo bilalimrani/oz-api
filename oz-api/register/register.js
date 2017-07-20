@@ -23,12 +23,12 @@ let registerValidator = (req,res,next) =>{
             next();
         }
         else{ 
-            res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
+            res.json(REST_API_STATUS_CODE.param_missing)
         }
         
     }else{
         result = false;
-        res.status(REST_API_STATUS_CODE.param_missing.code).json(REST_API_STATUS_CODE.param_missing)
+        res.json(REST_API_STATUS_CODE.param_missing)
     }
     
     
@@ -63,7 +63,7 @@ router.get('/verify',(req,res)=>{
     mysqlVerify.verifyLink(req.query.id)
     .then((data)=>{
         if(validator.isEmpty(data)){
-            res.status(REST_API_STATUS_CODE.no_content_found.code).json(REST_API_STATUS_CODE.no_content_found);
+            res.json(REST_API_STATUS_CODE.no_content_found);
         }else{
              mysqlVerify.activateEmail(data[0].email).then(res.end())
         }

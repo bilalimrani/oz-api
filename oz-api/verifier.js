@@ -6,7 +6,7 @@ var verifier = function(req,res,next){
 	token_verifier.verifyToken(token)
 	.then((data)=>{
 		if(validator.isEmpty(data)){
-			res.status(REST_API_STATUS_CODE.unauthorized.code).json(REST_API_STATUS_CODE.unauthorized);
+			res.json(REST_API_STATUS_CODE.unauthorized);
 		}
 		else{
 			 res.locals = data[0];
