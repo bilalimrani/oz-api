@@ -57,7 +57,8 @@ const mobileSignOut = require('./oz-api/signOut/signout');
 const mobileTwilioChat = require('./oz-api/TwilioChat/twiliochat');
 const mobileUpdateAMbassadorProfile = require('./oz-api/UpdateAmbassadorProfile/updateAmbassadorProfile');
 const mobileFacebookRegistration = require('./oz-api/FacebookRegistration/facebookregistration')
-const mobileAddToFavourite = require('./oz-api/AddToFavourite/addtofavourite')
+const mobileAddToFavourite = require('./oz-api/AddToFavourite/addtofavourite');
+const mobileID_me = require('./oz-api/ID_me/ID_me')
 
 app.use('/mobile', mobileRegister)
 app.use('/mobile', mobileAssignUserName)
@@ -71,6 +72,7 @@ app.use('/mobile', mobileTwilioChat)
 app.use('/mobile', mobileUpdateAMbassadorProfile)
 app.use('/mobile', mobileFacebookRegistration)
 app.use('/mobile', mobileAddToFavourite)
+app.use('/mobile', mobileID_me)
  
 
  
