@@ -6,8 +6,8 @@ const mysql = require('../mysql-client');
 var multer = require('multer');
 var thumb = require('node-thumbnail').thumb;
 console.log("mysql-AmbassadorProfile file")
-let path = "/var/ozimages/upload";
-let thumbPath = "/var/ozimages/thumbnail";
+let path = "./bin/upload";
+let thumbPath = "./bin/thumbnail";
 var img_path = null; 
 var AmbassadorProfile = function(){
 	return{
