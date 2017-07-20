@@ -92,7 +92,7 @@ var AmbassadorProfile = function(){
 		       				resolve(data);
 		       			}
 		       		});
-		       	});
+		       	}); 
 		},
 		returnResponse : function(params){
 			let dataobj = {
