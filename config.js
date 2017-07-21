@@ -7,9 +7,9 @@ var development = {
     publicPath: "http://localhost:3000",
     db: {
         host: 'localhost',
-        user: 'root',
-        password: '',
-        db: 'objective_zero'
+        user: 'dev_oz',
+        password: 'dev_oz',
+        db: 'dev_oz'
     },
     baseURL : "https://oz-dev.crewlogix.com:13000"
 };
