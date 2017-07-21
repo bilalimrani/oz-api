@@ -11,12 +11,14 @@ var http = require('http');
 //var certificate = fs.readFileSync('sslcert/fullchain.pem', 'utf8');
 //
 //var credentials = {key: privateKey, cert: certificate};
-
-
 const app = express();
+app.use(helmet())
+app.use(helmet.noCache())
+app.use(helmet.frameguard())
+
 
 app.use(cors());
-app.use(helmet())
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use(bodyParser.json());
