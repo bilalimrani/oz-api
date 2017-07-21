@@ -60,6 +60,7 @@ const mobileFacebookRegistration = require('./oz-api/FacebookRegistration/facebo
 const mobileAddToFavourite = require('./oz-api/AddToFavourite/addtofavourite');
 const mobileID_me = require('./oz-api/ID_me/ID_me')
 const mobileFilters = require('./oz-api/FiltersApi/filters')
+const mobileambassadorAvalibility = require('./oz-api/ambassadorAvalibility/ambassadorAvalibility')
 
 
 app.use('/mobile', mobileRegister)
@@ -76,6 +77,7 @@ app.use('/mobile', mobileFacebookRegistration)
 app.use('/mobile', mobileAddToFavourite)
 app.use('/mobile', mobileID_me)
 app.use('/mobile', mobileFilters)
+app.use('/mobile', mobileambassadorAvalibility)
 
 
  
