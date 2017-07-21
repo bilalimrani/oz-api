@@ -11,7 +11,7 @@ var development = {
         password: '',
         db: 'objective_zero'
     },
-    baseURL : "localhost:3000"
+    baseURL : "https://oz-dev.crewlogix.com:13000"
 };
 
 var production = {
