@@ -5,7 +5,8 @@ const verifier_function = require('../verifier');
 
 
 router.get('/ID_me', (req,res)=>{
-	res.send({message : "ID.me", req : req, res : res})
+
+	res.send({message : "ID.me"})
 })
 
 module.exports = router;
