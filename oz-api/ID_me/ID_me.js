@@ -4,7 +4,7 @@ const verifier_function = require('../verifier');
 
 
 
-router.post('/ID_me', (req,res)=>{
+router.get('/ID_me', (req,res)=>{
 	
 })
 
