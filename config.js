@@ -1,17 +1,17 @@
 var development = {
-    host: "https://oz-dev.crewlogix.com",
+    host: "132.148.129.180",
     port: "13000",
-    path: "https://oz-dev.crewlogix.com:13000",
+    path: "132.148.129.180:13000",
     apiKey : "objective@crewlogix",
     sendGridApiKEY : "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",
     publicPath: "http://localhost:3000",
     db: {
-        host: 'localhost',
+         host: 'localhost',
         user: 'dev_oz',
         password: 'dev_oz',
         db: 'dev_oz'
     },
-    baseURL : "https://oz-dev.crewlogix.com:13000"
+    baseURL : "localhost:3000"
 };
 
 var production = {
