@@ -86,7 +86,7 @@ var httpServer = http.createServer(app);
 
 
 
-httpServer.listen(configuration.port, configuration.host, function () {
+httpServer.listen(configuration.host, function () {
     console.log('objective zero is working on ', configuration.host, ':', configuration.port);
 });
 
