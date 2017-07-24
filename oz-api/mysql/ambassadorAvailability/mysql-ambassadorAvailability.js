@@ -40,19 +40,21 @@ var ambassadorAvailability = function(){
 
 
 		getAmbassador : function(params){
-			
+			console.log("params",params)
 			let dataobj = {
-				user_id : params.user_id
+				user_id : params
 			}
-			
+		
 			let globalResObj = {}
 			let query  = 'SELECT * FROM ambassedor WHERE user_id=:user_id' ;
 			return new Promise((resolve, reject)=>{
 				databaseUtil.getSingleRecord(mysql,query,dataobj,function (err,data){
+	
 	                if(err){
 	                     reject(err);
 	                }else{
-	                   resolve(data)
+	                	console.log("query",data[0])
+	                   resolve(data[0])
 	                   
 	                }
 
