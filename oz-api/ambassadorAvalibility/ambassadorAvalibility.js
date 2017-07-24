@@ -10,14 +10,21 @@ router.put('/ambassadorAvalibility', verifier_function.verifier,  (req, res)=>{
 	let user_id = res.locals
 
 	new Promise((resolve, reject)=>{
+
 		ambassadorAvailability.checkambassadorAvailability(req.body, user_id)
 		.then((data)=>{
 			resolve({massage : "Successfull"})
+		})
+		.catch((err)=>{
+			res.status(400).json(REST_API_STATUS_CODE.badrequest);
 		})
 	}).then((data)=>{
 		ambassadorAvailability.getAmbassador(user_id.id)
 		.then((data)=>{
 			res.json({responseCode : 200, message : "Data Retrived Sucessfully", response : data});			
+		})
+		.catch((err)=>{
+			res.status(400).json(REST_API_STATUS_CODE.badrequest);
 		})
 	})
 	

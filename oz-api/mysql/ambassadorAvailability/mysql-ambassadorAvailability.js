@@ -20,13 +20,14 @@ var ambassadorAvailability = function(){
 		        is_available_voiceCall : params.is_available_voiceCall,
 		        is_available_textChat : params.is_available_textChat,
 		        is_available_videoCall : params.is_available_videoCall,
-		        user_id:params.user_id
+		        user_id:user_id.id
 		    };
 
 			query = 'UPDATE ambassedor SET days_available= :days_available, time_range_start = :time_range_start, time_range_end = :time_range_end ,is_available_voiceCall=:is_available_voiceCall,is_available_textChat=:is_available_textChat,is_available_videoCall=:is_available_videoCall WHERE user_id = :user_id';
 			
 			return new Promise((resolve,reject)=>{
             	databaseUtil.updateMultiRecord(mysql,query,dataobj,function (err,data){
+            		
             		if(err){
 	                	reject(err);
                    	}else
@@ -53,7 +54,6 @@ var ambassadorAvailability = function(){
 	                if(err){
 	                     reject(err);
 	                }else{
-	                	console.log("query",data[0])
 	                   resolve(data[0])
 	                   
 	                }
