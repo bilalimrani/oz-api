@@ -10,7 +10,7 @@ var FavouriteAMbassador = function(){
 	return{
 		GetFavouriteAmbassadorList : function(params){
 			console.log('I am in GetFavouriteAmbassadorList function')
-			let query = 'SELECT ambassedor.* FROM ambassedor Left JOIN favourite_ambassador On favourite_ambassador.amb_id = ambassedor.id and favourite_ambassador.user_id = :user_id'	
+			let query = 'SELECT ambassedor.* FROM ambassedor Inner JOIN favourite_ambassador On favourite_ambassador.amb_id = ambassedor.id and favourite_ambassador.user_id = :user_id'	
 			let dataObj = {
 				user_id : params
 			}
