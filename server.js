@@ -63,6 +63,7 @@ const mobileAddToFavourite = require('./oz-api/AddToFavourite/addtofavourite');
 const mobileID_me = require('./oz-api/ID_me/ID_me')
 const mobileFilters = require('./oz-api/FiltersApi/filters')
 const mobileambassadorAvalibility = require('./oz-api/ambassadorAvalibility/ambassadorAvalibility')
+const mobileResources = require('./oz-api/Resources/resources');
 
 
 app.use('/mobile', mobileRegister)
@@ -80,6 +81,7 @@ app.use('/mobile', mobileAddToFavourite)
 app.use('/mobile', mobileID_me)
 app.use('/mobile', mobileFilters)
 app.use('/mobile', mobileambassadorAvalibility)
+app.use('/mobile', mobileResources)
 
 
  
