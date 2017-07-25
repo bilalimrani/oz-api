@@ -28,7 +28,7 @@ router.get('/ID_me', (req,res)=>{
 		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
 		code : code,
 		client_secret : '27bf2978791fb27a8b6ee84a38688741',
-		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',
+		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',  
 
 	}
 
