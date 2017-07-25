@@ -1,37 +1,41 @@
 const express = require('express')
 const router = express.Router()
 const verifier_function = require('../verifier');
-const curl = require('curl')
 
-
+var request = require('request');
+const app = express();
+var url = 'https://api.id.me/oauth/token';
+let code;
+var curl = require('curlrequest');
 
 router.get('/ID_me', (req,res)=>{
-	console.log("ID.me",req.body, req.params, req.query,res)
-	let query_data = req.query.code
-
-	let data1 = {
-		query : query_data,
-	}
-
-	let body = {
-		code : req.query.code,
-		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
-		client_secret : '27bf2978791fb27a8b6ee84a38688741',
-		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
-	}
-
-	let óptions = {
-		code : req.query.code,
-		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
-		client_secret : '27bf2978791fb27a8b6ee84a38688741',
-		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
-	}
+	code = req.query.code
 
 	let response1;
-	curl.post('https://api.id.me/oauth/token', body, options, function(err, response, body) {
-		response1 = response
+	 request.post({url:'https://api.id.me/oauth/token', form: {
+	 	client_id : '2a4020a6d1b4fc5d721ed95be614e879',
+		code : code,
+		client_secret : '27bf2978791fb27a8b6ee84a38688741',
+		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',
+		grant_type : 'authorization_code'
+	 } } , function (error, response, expected) {
+	    console.log('api.id.me token ', expected.scope)
+
+	    if(error){
+	    	console.log("err", error)
+	    }
+	    else{
+	    	console.log("response")
+	    }
+	    response1 = response
+	    res.send(error+response+expected)
+	    
 	});
-	res.send(response)
+
+	//res.send({"message" : response1})
+
+
 })
+
 
 module.exports = router;
