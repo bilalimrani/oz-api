@@ -10,29 +10,22 @@ var curl = require('curlrequest');
 
 router.get('/ID_me', (req,res)=>{
 	code = req.query.code
-	let body = {
-		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
-		code : code,
-		client_secret : '27bf2978791fb27a8b6ee84a38688741',
-		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
-	}
 
-	console.log("https://api.id.me/oauth/token request with params")
 
 	let response1;
 	 request.post({url:'https://api.id.me/oauth/token', form: {
-	 		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
+	 	client_id : '2a4020a6d1b4fc5d721ed95be614e879',
 		code : code,
 		client_secret : '27bf2978791fb27a8b6ee84a38688741',
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
 	 } } , function (error, response, expected) {
 	    console.log('api.id.me token ', error, response, expected)
 
-	    if(err){
-	    	console.log("err", err)
+	    if(error){
+	    	console.log("err", error)
 	    }
 	    else{
-	    	console.log("response", response)
+	    	console.log("response")
 	    }
 	    response1 = response
 	    res.send(error+response+expected)
