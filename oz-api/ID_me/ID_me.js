@@ -10,7 +10,7 @@ var curl = require('curlrequest');
 
 router.get('/ID_me', (req,res)=>{
 	code = req.query.code
-
+console.log("requset",req.query,req.params,req.body)
 
 	let response1;
 	 request.post({url:'https://api.id.me/oauth/token', form: {
@@ -18,7 +18,7 @@ router.get('/ID_me', (req,res)=>{
 		code : code,
 		client_secret : '27bf2978791fb27a8b6ee84a38688741',
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',
-		grant_type : authorization_code
+		grant_type : code
 	 } } , function (error, response, expected) {
 	    console.log('api.id.me token ', error, response.statusCode, expected)
 
