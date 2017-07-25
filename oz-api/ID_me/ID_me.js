@@ -24,7 +24,7 @@ router.get('/ID_me', (req,res)=>{
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
 	}
 
-		console.log("https://api.id.me/oauth/token request with params",options)
+	console.log("https://api.id.me/oauth/token request with params")
 
 	let response1;
 	 request.post({url:'https://api.id.me/oauth/token', form: {
