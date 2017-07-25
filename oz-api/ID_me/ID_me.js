@@ -25,7 +25,6 @@ router.get('/ID_me', (req,res)=>{
 	}
 
 	let options = {
-		url : 'https://api.id.me/oauth/token',
 		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
 		code : code,
 		client_secret : '27bf2978791fb27a8b6ee84a38688741',
@@ -38,6 +37,13 @@ router.get('/ID_me', (req,res)=>{
 	let response1;
 	var req = request('https://api.id.me/oauth/token', {method: 'POST', json: options}, function (error, response, expected) {
 	    // Note: req.req! 
+
+	    if(err){
+	    	console.log("err", err)
+	    }
+	    else{
+	    	console.log("response", response)
+	    }
 	    response1 = response
 	    // curl 'http://google.com' -H 'accept: application/json' -H 'content-type: application/json' -H 'connection: keep-alive' --data '{"data":"data"}' --compressed 
 	});
