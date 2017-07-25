@@ -41,7 +41,7 @@ var ambassadorAvailability = function(){
 
 
 		getAmbassador : function(params){
-			console.log("params",params)
+			
 			let dataobj = {
 				user_id : params
 			}
