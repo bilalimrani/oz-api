@@ -35,8 +35,8 @@ router.get('/ID_me', (req,res)=>{
 	
 
 	let response1;
-	var req = request('https://api.id.me/oauth/token', {method: 'POST', json: options}, function (error, response, expected) {
-	    // Note: req.req! 
+	 request({url:'https://api.id.me/oauth/token',method:'POST'}, options, function (error, response, expected) {
+	    console.log('api.id.me token ', error, response, expected)
 
 	    if(err){
 	    	console.log("err", err)
@@ -45,7 +45,7 @@ router.get('/ID_me', (req,res)=>{
 	    	console.log("response", response)
 	    }
 	    response1 = response
-	    // curl 'http://google.com' -H 'accept: application/json' -H 'content-type: application/json' -H 'connection: keep-alive' --data '{"data":"data"}' --compressed 
+	    
 	});
 
 	res.send({"message" : response1})
