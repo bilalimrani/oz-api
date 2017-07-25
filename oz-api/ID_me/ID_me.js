@@ -14,7 +14,7 @@ router.get('/ID_me', (req,res)=>{
 		query : req.params,
 		res : res
 	}
-	res.send({message : "ID.me", response : data})
+	res.send(data)
 })
 
 module.exports = router;
