@@ -24,18 +24,15 @@ router.get('/ID_me', (req,res)=>{
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
 	}
 
-	let options = {
-		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
-		code : code,
-		client_secret : '27bf2978791fb27a8b6ee84a38688741',
-		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',  
-
-	}
-
-	console.log("https://api.id.me/oauth/token request with params",options)
+		console.log("https://api.id.me/oauth/token request with params",options)
 
 	let response1;
-	 request.post({url:'https://api.id.me/oauth/token', form:options}, function (error, response, expected) {
+	 request.post({url:'https://api.id.me/oauth/token', form: {
+	 		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
+		code : code,
+		client_secret : '27bf2978791fb27a8b6ee84a38688741',
+		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
+	 } } , function (error, response, expected) {
 	    console.log('api.id.me token ', error, response, expected)
 
 	    if(err){
