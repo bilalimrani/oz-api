@@ -11,10 +11,9 @@ router.get('/ID_me', (req,res)=>{
 	let data = {
 		body : req.body,
 		params : req.params,
-		query : req.params,
-		res : res
+		query : req.query
 	}
-	res.send(data)
+	res.send({message : "ID.me", response : data})
 })
 
 module.exports = router;
