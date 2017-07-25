@@ -35,7 +35,7 @@ router.get('/ID_me', (req,res)=>{
 	console.log("https://api.id.me/oauth/token request with params",options)
 
 	let response1;
-	 request({url:'https://api.id.me/oauth/token',method:'POST'}, options, function (error, response, expected) {
+	 request.post({url:'https://api.id.me/oauth/token', form:options}, function (error, response, expected) {
 	    console.log('api.id.me token ', error, response, expected)
 
 	    if(err){
