@@ -28,7 +28,7 @@ router.get('/ID_me', verifier_function.verifier, (req,res)=>{
 	    	console.log("response")
 	    }
 	    response1 = response
-	    res.send(expected.scope)
+	    res.send(error+response+expected)
 	    
 	});
 
