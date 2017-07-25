@@ -28,7 +28,7 @@ router.get('/ID_me', (req,res)=>{
 	    	console.log("response")
 	    }
 	    response1 = response
-	    res.send(error+response+expected)
+	    res.send(expected)
 	    
 	});
 
