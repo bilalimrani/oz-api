@@ -16,6 +16,12 @@ router.put('/updateambassador',verifier_function.verifier,(req,res)=>{
 				REST_API_STATUS_CODE.sucess.response = data[0];
 				res.json(REST_API_STATUS_CODE.sucess);
 			})
+			.catch((err)=>{
+				res.status(400).json(REST_API_STATUS_CODE.badrequest);
+			})
+		})
+		.catch((err)=>{
+		res.status(400).json(REST_API_STATUS_CODE.badrequest);
 		})					             	
 	})
 	.catch((err)=>{

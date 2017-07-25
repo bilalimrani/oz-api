@@ -58,6 +58,7 @@ var AddRecentActivity = function(){
 			return new Promise((resolve,reject)=>{
 				databaseUtil.insertSingleRecord(mysql,table,dataObj,(err,data)=>{
 					if(err){
+						console.log('err',err)
 						reject(err);
 					}else{
 						resolve(data);
