@@ -25,8 +25,9 @@ router.get('/ID_me', (req,res)=>{
 	    	console.log("err", error)
 	    }
 	    else{
-	    	let scope = JSON.parse(expected)
-	    	res.send(scope)
+	    	var x = 'expected'
+	    	var myArr = JSON.parse(x);
+	    	res.send(myArr)
 	    }
 	    
 	    
