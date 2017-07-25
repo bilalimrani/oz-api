@@ -8,13 +8,6 @@ var url = 'https://api.id.me/oauth/token';
 let code;
 var curl = require('curlrequest');
 
-
-
-var curlify = require('request-as-curl'),
-    request = require('express'),
-    data = {data: 'data'};
-
-
 router.get('/ID_me', (req,res)=>{
 	code = req.query.code
 	let body = {
