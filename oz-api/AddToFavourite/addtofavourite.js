@@ -26,7 +26,7 @@ router.post('/add_to_favourite',verifier_function.verifier,(req,res)=>{
 								data[0].is_favourite = 1;
 								REST_API_STATUS_CODE.sucess.response = data[0]; 
 								res.json(REST_API_STATUS_CODE.sucess);
-							})
+							}) 
 							.catch((err)=>{
 								res.status(400).json(REST_API_STATUS_CODE.badrequest);
 							})
