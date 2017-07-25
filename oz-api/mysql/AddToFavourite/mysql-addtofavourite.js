@@ -90,7 +90,7 @@ var addToFavourite = function(){
 					reject(err);
 				}
 				else{
-					data[0].is_favourite = 1;
+					
 					resolve(data);
 				}
 
