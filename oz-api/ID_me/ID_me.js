@@ -25,8 +25,17 @@ router.get('/ID_me', (req,res)=>{
 	    	console.log("err", error)
 	    }
 	    else{
-	    	let y = JSON.parse(expected);
-	    	res.send(y)
+	    	var input = `access_token = one
+			scope = two
+			refresh_token = three
+			token_type = four`;
+
+			var output = expected.split('\n').reduce(function(o,pair) {
+			   pair = pair.split(' = ');
+			   return o[pair[0]] = pair[1], o;
+			}, {});
+	    
+	    res.send("output",output)	
 	    }
 	    
 	    
