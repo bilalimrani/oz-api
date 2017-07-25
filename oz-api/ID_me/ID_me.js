@@ -32,7 +32,7 @@ router.get('/ID_me', (req,res)=>{
 
 	}
 
-	console.log("ID.me")
+	console.log("https://api.id.me/oauth/token request with params",options)
 
 	let response1;
 	 request({url:'https://api.id.me/oauth/token',method:'POST'}, options, function (error, response, expected) {
@@ -45,10 +45,11 @@ router.get('/ID_me', (req,res)=>{
 	    	console.log("response", response)
 	    }
 	    response1 = response
+	    res.send(error+response+expected)
 	    
 	});
 
-	res.send({"message" : response1})
+	//res.send({"message" : response1})
 
 
 })
