@@ -4,12 +4,20 @@ const validator = require('lodash');
 const REST_API_STATUS_CODE = require("../../responses");
 const verifier_function = require("../verifier");
 const configration = require('../../config')();
-router.get('/becomeambassador',verifier_function.verifier,(req,res)=>{
+
+router.get('/becomeambassador', verifier_function.verifier, (req,res)=>{
 	console.log("I am in becomeambassador Page")
+
+	const becomeAmbassador = require('../mysql/ambassadorPages/mysql-ambassadorPages')
+	becomeAmbassador.ambassadorvideo("data")
+	.then((data)=>{
+		res.render('../pages/page1' ,  { link: data, host:configration.path});
+	})
 	 
-	 res.render('../pages/page1' ,  { link: 'http://techslides.com/demos/sample-videos/small.mp4',host:configration.path});
+	 
 
 });
+
 router.get('/quessionarepage',verifier_function.verifier,(req,res)=>{
 	console.log("I am in Quessionare Page")
  
