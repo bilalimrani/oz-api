@@ -5,15 +5,10 @@ const curl = require('curl')
 var request = require('request');
 const app = express();
 var url = 'https://api.id.me/oauth/token';
-
 let code;
+
 router.get('/ID_me', (req,res)=>{
 	code = req.query.code
-	res.redirect('/IDme_auth');
-
-})
-
-app.post('/IDme_auth', (req, res)=>{
 
 	let body = {
 		client_d : '2a4020a6d1b4fc5d721ed95be614e879',
@@ -38,5 +33,6 @@ app.post('/IDme_auth', (req, res)=>{
 
 	res.send(response1)
 })
+
 
 module.exports = router;
