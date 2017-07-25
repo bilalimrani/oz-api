@@ -5,7 +5,8 @@ const REST_API_STATUS_CODE = require("../../responses");
 const verifier_function = require("../verifier");
 
 router.get('/resources',verifier_function.verifier,(req,res)=>{
-	console.log('I am in resources router')
+	console.log('I am in resources router',res.locals)
+
 	let mysqlResources = require('../mysql/Resources/mysql-resources');
 	mysqlResources.getResources()
 	.then((data)=>{

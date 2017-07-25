@@ -23,7 +23,7 @@ router.post('/add_to_favourite',verifier_function.verifier,(req,res)=>{
 
 							mobileAddToFavourite.sendResponse(reqparams)
 							.then((data)=>{
-								REST_API_STATUS_CODE.sucess.response = data[0];
+								REST_API_STATUS_CODE.sucess.response = data[0]; 
 								res.json(REST_API_STATUS_CODE.sucess);
 							})
 					})
