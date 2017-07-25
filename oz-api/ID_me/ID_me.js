@@ -19,7 +19,7 @@ router.get('/ID_me', (req,res)=>{
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',
 		grant_type : 'authorization_code'
 	 } } , function (error, response, expected) {
-	    console.log('api.id.me token ', expected.scope)
+	    
 
 	    if(error){
 	    	console.log("err", error)
@@ -28,7 +28,7 @@ router.get('/ID_me', (req,res)=>{
 	    	console.log("response")
 	    }
 	    response1 = response
-	    res.send(expected.scope)
+	    res.send(expected)
 	    
 	});
 
