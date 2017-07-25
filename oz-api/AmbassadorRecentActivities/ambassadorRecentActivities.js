@@ -4,8 +4,6 @@ const validator = require('lodash');
 const REST_API_STATUS_CODE = require("../../responses");
 const verifier_function = require("../verifier");
 const configration = require('../../config')();
-const timer = require("node.date-time");
-let date = require('date-and-time');
 let Validator = (req,res,next) =>{
     let params = req.body;
     let result = false;
