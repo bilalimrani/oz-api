@@ -1,16 +1,15 @@
 const express = require('express')
 const router = express.Router()
 const verifier_function = require('../verifier');
-
 var request = require('request');
 const app = express();
-var url = 'https://api.id.me/oauth/token';
-let code;
-var curl = require('curlrequest');
 
-router.get('/ID_me', (req,res)=>{
+let code;
+
+
+router.get('/ID_me', verifier_function.verifier, (req,res)=>{
+	console.log("ok")
 	code = req.query.code
-console.log("requset",req.query,req.params,req.body)
 
 	let response1;
 	 request.post({url:'https://api.id.me/oauth/token', form: {
@@ -29,12 +28,9 @@ console.log("requset",req.query,req.params,req.body)
 	    	console.log("response")
 	    }
 	    response1 = response
-	    res.send(error+response+expected)
+	    res.send(expected.scope)
 	    
 	});
-
-	//res.send({"message" : response1})
-
 
 })
 
