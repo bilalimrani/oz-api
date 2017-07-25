@@ -24,6 +24,8 @@ router.get('/ID_me', (req,res)=>{
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
 	}
 
+	console.log("req",options)
+
 	let response1;
 	request({url : url, option : options}, function (error, response, body) {
 		    response1 = response
