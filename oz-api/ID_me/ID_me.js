@@ -32,7 +32,7 @@ router.get('/ID_me', (req,res)=>{
 
 	}
 
-	
+	console.log("ID.me")
 
 	let response1;
 	 request({url:'https://api.id.me/oauth/token',method:'POST'}, options, function (error, response, expected) {
