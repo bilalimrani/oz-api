@@ -27,9 +27,11 @@ router.get('/ID_me', (req,res)=>{
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me'
 	}
 
+	let response1;
 	curl.post('https://api.id.me/oauth/token', body, options, function(err, response, body) {
-		res.send(response)
+		response1 = response
 	});
+	res.send(response)
 })
 
 module.exports = router;
