@@ -27,7 +27,6 @@ router.get('/ID_me', (req,res)=>{
 	    else{
 	    	console.log("response")
 	    }
-	    response1 = response
 	    let scope = JSON.parse(expected)
 	    res.send(scope)
 	    
