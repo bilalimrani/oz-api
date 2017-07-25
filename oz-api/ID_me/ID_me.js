@@ -18,7 +18,7 @@ console.log("requset",req.query,req.params,req.body)
 		code : code,
 		client_secret : '27bf2978791fb27a8b6ee84a38688741',
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',
-		grant_type : code
+		grant_type : 'authorization_code'
 	 } } , function (error, response, expected) {
 	    console.log('api.id.me token ', error, response.statusCode, expected)
 
