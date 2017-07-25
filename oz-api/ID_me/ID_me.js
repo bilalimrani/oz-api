@@ -25,10 +25,10 @@ router.get('/ID_me', (req,res)=>{
 	    	console.log("err", error)
 	    }
 	    else{
-	    	console.log("response")
+	    	let scope = JSON.parse(expected)
+	    	res.send(scope)
 	    }
-	    let scope = JSON.parse(expected)
-	    res.send(scope)
+	    
 	    
 	});
 
