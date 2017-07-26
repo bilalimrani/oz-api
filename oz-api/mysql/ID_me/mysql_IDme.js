@@ -8,7 +8,7 @@ const mysql = require('../mysql-client');
 var veteranData = function(){
 	return {
 		updateVeteran : function(data, veteranData){
-			console.log("console.log",veteranData)
+			
 			let dataObj = {
 				id : data.id,
 				veteranData : veteranData,
@@ -17,9 +17,9 @@ var veteranData = function(){
 			}
 			 let query = "UPDATE users SET user_role = :user_role, veteranData = :veteranData, veteran_isVerified = :veteran_isVerified where id = :id";
 
-			 return new Promise((resolve, reject)=>{
+			let p1 = new Promise((resolve, reject)=>{
 			 	databaseUtil.updateMultiRecord(mysql, query, dataObj, (err, res)=>{
-			 		console.log(res)
+			 	
 			 		if(err){
 			 			reject(err)
 			 		}
@@ -27,7 +27,25 @@ var veteranData = function(){
 			 			resolve(res)
 			 		}
 			 	})
-			 })
+			})
+
+			let p2 = new Promise((resolve, reject)=>{
+				let dataObj = {
+					id : data.id
+				}
+				let query = "SELECT * from users where id = :id";
+
+				databaseUtil.getSingleRecord(mysql, query, dataObj, (err, res)=>{
+					if(err){
+						reject(err)
+					}
+					else{
+						resolve(res)
+					}
+				})
+			})
+
+			return Promise.all([p1,p2])
 		}
 	}
 }

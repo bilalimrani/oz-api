@@ -34,7 +34,7 @@ router.post('/veteran_data', verifier_function.verifier, (req, res)=>{
 		let mysql_insertIDme = require('../mysql/ID_me/mysql_IDme')
 	    mysql_insertIDme.updateVeteran(res.locals, req.body.veteran_data)
 	    .then((data)=>{
-	    	res.send({responseCode : 200, message : "Data updated Sussessfullt" })
+	    	res.send({responseCode : 200, message : "Data updated Sussessfullt", response : data[1][0] })
 	    })
 	   	.catch((err)=>{
 	    	res.status(400).json(REST_API_STATUS_CODE.badrequest)
