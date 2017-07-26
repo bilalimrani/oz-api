@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<title>Verified Ambassador</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+	<div class="container">
+	<p class="centering text-center" style="color: #308bf2;margin-top: 30%" ><b>Congratulations!</b></p>
+	<p class="centering text-center" style="color: #308bf2" ><b>You are verified as an Veteran</b></p>
+    <p class="centering text-center" style="color: #308bf2" ><b><%= data%></b></p>
+	<button id="pin7Off"  class="btn btn-primary center-block" style="width: 40%; margin-top: 70px;" onclick="performClick('<%= data%>')">Continue</button>
+	</div>
+ 
+	
+</div>
+
+<script type='text/javascript'>
+           
+            function performClick(data)
+            {
+                console.log("data")
+                console.log("e",data)
+             
+                //ok.performClick('congratulation')
+                
+            }
+
+            $('#pin7Off').click(function() {
+                 console.log("event")
+           });
+        </script>
+</body>
+</html>
