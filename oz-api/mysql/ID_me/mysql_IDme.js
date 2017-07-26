@@ -7,10 +7,28 @@ const mysql = require('../mysql-client');
 
 var veteranData = function(){
 	return {
-		updateVeteran : function(data){
-			console.log(data)
+		updateVeteran : function(data, veteranData){
+			console.log("console.log",veteranData)
+			let dataObj = {
+				id : data.id,
+				veteranData : veteranData,
+				user_role : "veteran"
+			}
+			 let query = "UPDATE users SET user_role = :user_role, veteranData = :veteranData where id = :id";
+
+			 return new Promise((resolve, reject)=>{
+			 	databaseUtil.updateMultiRecord(mysql, query, dataObj, (err, res)=>{
+			 		console.log(res)
+			 		if(err){
+			 			reject(err)
+			 		}
+			 		else{
+			 			resolve(res)
+			 		}
+			 	})
+			 })
 		}
 	}
 }
 
-module.exports = veteranData
+module.exports = new veteranData;
