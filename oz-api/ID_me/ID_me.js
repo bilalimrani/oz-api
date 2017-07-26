@@ -21,17 +21,7 @@ router.get('/ID_me',  (req,res)=>{
 	 } } , function (error, response, expected) {
 	    let veteran = JSON.stringify(expected)
 	    	
-	    		let mysql_insertIDme = require('../mysql/ID_me/mysql_IDme')
-	    		mysql_insertIDme.updateVeteran(res.locals, veteran)
-	    		.then((data)=>{
-	    			res.send(data)
-	    		})
-	    		.catch((err)=>{
-	    			console.log("err", err)
-	    		})
-	    
-	
-
+	    res.send("veteran", veteran)
 	    
 	    
 	});
