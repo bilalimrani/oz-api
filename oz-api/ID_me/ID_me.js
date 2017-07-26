@@ -24,7 +24,7 @@ router.get('/ID_me', (req,res)=>{
 	    if(error){
 	    	console.log("err", error)
 	    }
-	    else if(Object.keys(expected)){
+	    else {
 	    	new Promise((resolve, reject)=>{
 	    		let mysql_insertIDme = require('../mysql/ID_me/mysql_IDme')
 	    		mysql_insertIDme.updateVeteran(res.locals, veteran)
