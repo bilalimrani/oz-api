@@ -66,6 +66,7 @@ const mobileambassadorAvalibility = require('./oz-api/ambassadorAvalibility/amba
 const mobileResources = require('./oz-api/Resources/resources');
 const mobileRecentActivities = require('./oz-api/AmbassadorRecentActivities/ambassadorRecentActivities')
 const mobileTour = require('./oz-api/Tour/tour');
+const mobileActivities = require('./oz-api/Activities/activities')
 
 
 app.use('/mobile', mobileRegister)
@@ -86,6 +87,7 @@ app.use('/mobile', mobileambassadorAvalibility)
 app.use('/mobile', mobileResources)
 app.use('/mobile', mobileRecentActivities)
 app.use('/mobile', mobileTour)
+app.use('/mobile', mobileActivities)
  
 var httpServer = http.createServer(app);
 //var httpsServer = https.createServer(credentials, app);
