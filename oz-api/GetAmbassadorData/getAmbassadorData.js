@@ -11,7 +11,7 @@ router.get('/ambassadorData',verifier_function.verifier,(req,res)=>{
 	.then((data)=>{
 		if(validator.isEmpty(data)){
 			
-			res.json(REST_API_STATUS_CODE.no_content_found);
+			res.json(REST_API_STATUS_CODE.no_content_found1);
 		}
 		else{
 			REST_API_STATUS_CODE.sucess.response = data;
@@ -31,7 +31,7 @@ router.get('/get_favouriteAmbassador',verifier_function.verifier,(req,res)=>{
 	.then((data)=>{
 		if(validator.isEmpty(data)){
 			
-			res.json(REST_API_STATUS_CODE.no_content_found);
+			res.json(REST_API_STATUS_CODE.no_content_found1);
 		}
 		else{
 
