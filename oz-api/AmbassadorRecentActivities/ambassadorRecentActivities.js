@@ -4,6 +4,7 @@ const validator = require('lodash');
 const REST_API_STATUS_CODE = require("../../responses");
 const verifier_function = require("../verifier");
 const configration = require('../../config')();
+const date = require('date-and-time');
 let Validator = (req,res,next) =>{
     let params = req.body;
     let result = false;
@@ -70,9 +71,23 @@ router.post('/add_recent_activity',verifier_function.verifier,Validator,(req,res
 });
 
 router.get('/time',(req,res)=>{
+	console.log('HEEEEEEEEEEEEEEEEEEE')
 	let now = new Date(1500987701906);
+	let after = new Date(1500991838483);
 	console.log('Now ',now)
 	let x = '1500987701906';
 	console.log('Time at the Moment  ',date.format(now, 'YYYY/MM/DD HH:mm:ss'));
+	console.log('Time at the Moment 233 ',date.format(after, 'YYYY/MM/DD HH:mm:ss'));
+	console.log('Time After Calculation   -- ',date.subtract(after, now).toSeconds() % 3600 / 60);
+	
+	var h = Math.floor(date.subtract(after, now).toSeconds() / 3600);
+    var m = Math.floor(date.subtract(after, now).toSeconds() % 3600 / 60);
+    var s = Math.floor(date.subtract(after, now).toSeconds() % 3600 % 60)
+	
+	var hDisplay = h > 0 ? h + (h == 1 ? ":" : ":") : "";
+    var mDisplay = m > 0 ? m + (m == 1 ? ":" : ":") : "";
+    var sDisplay = s > 0 ? s + (s == 1 ? "" : "") : "";
+
+    console.log('Final Time - ',hDisplay + mDisplay + sDisplay)
 })
 module.exports = router;
