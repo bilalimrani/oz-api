@@ -13,9 +13,9 @@ var veteranData = function(){
 				id : data.id,
 				veteranData : veteranData,
 				user_role : "veteran",
-				veteran_isVerified : 1
+				isverified : 1
 			}
-			 let query = "UPDATE users SET user_role = :user_role, veteranData = :veteranData, veteran_isVerified = :veteran_isVerified where id = :id";
+			 let query = "UPDATE users SET user_role = :user_role, veteranData = :veteranData, isverified = :isverified where id = :id";
 
 			let p1 = new Promise((resolve, reject)=>{
 			 	databaseUtil.updateMultiRecord(mysql, query, dataObj, (err, res)=>{
