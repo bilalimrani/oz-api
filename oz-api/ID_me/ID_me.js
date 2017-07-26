@@ -24,18 +24,12 @@ router.get('/ID_me', (req,res)=>{
 	    if(error){
 	    	console.log("err", error)
 	    }
-	    else{
-	    	var input = `access_token = one
-			scope = two
-			refresh_token = three
-			token_type = four`;
+	    else if(Object.keys(expected)){
+	    	new Promise((resolve, reject)=>{
+	    		let mysql_insertIDme = require('../mysql/ID_me/mysql-ID-me')
+	    		mysql_insertIDme.updateVeteran("veteran")
 
-			var output = expected.split('\n').reduce(function(o,pair) {
-			   pair = pair.split(' = ');
-			   return o[pair[0]] = pair[1], o;
-			}, {});
-	    
-	    res.send("output",output)	
+	    	})
 	    }
 	    
 	    
