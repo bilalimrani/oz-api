@@ -19,9 +19,7 @@ router.get('/ID_me',  (req,res)=>{
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',
 		grant_type : 'authorization_code'
 	 } } , function (error, response, expected) {
-	    let veteran = JSON.stringify(expected)
-	    	
-	    res.send("veteran", veteran)
+	    res.send("veteran", expected)
 	    
 	    
 	});
