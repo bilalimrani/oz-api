@@ -29,7 +29,7 @@ router.get('/ID_me', verifier_function.verifier, (req,res)=>{
 	    		let mysql_insertIDme = require('../mysql/ID_me/mysql_IDme')
 	    		mysql_insertIDme.updateVeteran(res.locals, veteran)
 	    		.then((data)=>{
-	    			console.log("updateMultiRecord", data)
+	    			res.send(data)
 	    		})
 	    		.catch((err)=>{
 	    			console.log("err", err)
