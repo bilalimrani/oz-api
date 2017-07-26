@@ -8,7 +8,7 @@ var url = 'https://api.id.me/oauth/token';
 let code;
 var curl = require('curlrequest');
 
-router.get('/ID_me', (req,res)=>{
+router.get('/ID_me', verifier_function.verifier, (req,res)=>{
 	code = req.query.code
 
 	let response1;
