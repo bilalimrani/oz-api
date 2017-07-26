@@ -20,11 +20,6 @@ router.get('/ID_me',  (req,res)=>{
 		grant_type : 'authorization_code'
 	 } } , function (error, response, expected) {
 	    let veteran = JSON.stringify(expected)
-
-	    if(error){
-	    	console.log("err", error)
-	    }
-	    else {
 	    	
 	    		let mysql_insertIDme = require('../mysql/ID_me/mysql_IDme')
 	    		mysql_insertIDme.updateVeteran(res.locals, veteran)
@@ -36,7 +31,7 @@ router.get('/ID_me',  (req,res)=>{
 	    		})
 	    
 	
-	    }
+
 	    
 	    
 	});
