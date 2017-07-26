@@ -5,17 +5,19 @@
 
 <title>Verified Ambassador</title>
 <script type='text/javascript'>
-            function getText()
+           
+            function performClick(data)
             {
-                return document.getElementById('txtinput').value;
-            }
-            function performClick(e)
-            {
-                console.log("e",e)
+                console.log("data")
+                console.log("e",data)
             	window.location = 'oz:congratulation';
             	//ok.performClick('congratulation')
                 
             }
+
+            $('#pin7Off').click(function() {
+                 console.log("event")
+           });
         </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -28,7 +30,7 @@
 	<p class="centering text-center" style="color: #308bf2;margin-top: 30%" ><b>Congratulations!</b></p>
 	<p class="centering text-center" style="color: #308bf2" ><b>You are verified as an Veteran</b></p>
     <p class="centering text-center" style="color: #308bf2" ><b><%= data%></b></p>
-	<button  class="btn btn-primary center-block" style="width: 40%; margin-top: 70px;" onclick="performClick('<%= data%>')">Continue</button>
+	<button id="pin7Off"  class="btn btn-primary center-block" style="width: 40%; margin-top: 70px;" onclick="performClick('<%= data%>')">Continue</button>
 	</div>
  
 	
