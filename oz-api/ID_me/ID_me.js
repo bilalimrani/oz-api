@@ -8,18 +8,25 @@ var url = 'https://api.id.me/oauth/token';
 let code;
 var curl = require('curlrequest');
 
-router.get('/ID_me',  (req,res)=>{
-	
+router.get('/ID_me', (req,res)=>{
+	code = req.query.code
+
+	let response1;
+	 request.post({url:'https://api.id.me/oauth/token', form: {
+	 	client_id : '2a4020a6d1b4fc5d721ed95be614e879',
+		code : code,
+		client_secret : '27bf2978791fb27a8b6ee84a38688741',
+		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',
+		grant_type : 'authorization_code'
+	 } } , function (error, response, expected) {
+	    res.send(expected)
+	    
+	});
+
+	//res.send({"message" : response1})
+
+
 })
 
-
-router.get('/verification', verifier_function.verifier, (req, res)=>{
-	let IDme_Url = 'https://api.id.me/oauth/authorize?client_id=2a4020a6d1b4fc5d721ed95be614e879&redirect_uri=https://oz-dev.crewlogix.com/mobile/ID_me&response_type=code&scope=military&state=488e864b'
-	request(IDme_Url, (request,response)=>{
-		res.send("data",request)
-	})
-
-
-})
 
 module.exports = router;
