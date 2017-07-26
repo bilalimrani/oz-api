@@ -11,8 +11,7 @@ var curl = require('curlrequest');
 router.get('/ID_me',  (req,res)=>{
 	code = req.query.code
 
-	let response1;
-	 request.post({url:'https://api.id.me/oauth/token', form: {
+	request.post({url:'https://api.id.me/oauth/token', form: {
 	 	client_id : '2a4020a6d1b4fc5d721ed95be614e879',
 		code : code,
 		client_secret : '27bf2978791fb27a8b6ee84a38688741',
