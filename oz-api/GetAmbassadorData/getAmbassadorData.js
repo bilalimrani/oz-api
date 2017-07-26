@@ -10,7 +10,7 @@ router.get('/ambassadorData',verifier_function.verifier,(req,res)=>{
 	mysqlGetData.getData(req)
 	.then((data)=>{
 		if(validator.isEmpty(data)){
-			REST_API_STATUS_CODE.no_content_found.response = '[]';
+			REST_API_STATUS_CODE.no_content_found.response : [];
 			res.json(REST_API_STATUS_CODE.no_content_found);
 		}
 		else{
@@ -30,7 +30,7 @@ router.get('/get_favouriteAmbassador',verifier_function.verifier,(req,res)=>{
 	mysqlFavouriteAmbassador.GetFavouriteAmbassadorList(res.locals.id)
 	.then((data)=>{
 		if(validator.isEmpty(data)){
-			REST_API_STATUS_CODE.no_content_found.response = '[]';
+			REST_API_STATUS_CODE.no_content_found.response : [];
 			res.json(REST_API_STATUS_CODE.no_content_found);
 		}
 		else{
