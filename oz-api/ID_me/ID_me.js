@@ -20,7 +20,7 @@ router.get('/ID_me', (req,res)=>{
 		grant_type : 'authorization_code'
 	 } } , function (error, response, expected) {
 
-	    res.send('../pages/veteran.ejs',{expected})
+	    res.render('../pages/veteran.ejs',{expected})
 	    
 	});
 
