@@ -10,7 +10,7 @@ var curl = require('curlrequest');
 
 router.get('/ID_me', (req,res)=>{
 	code = req.query.code
-
+	let testtoken = '1234ABC'
 	let response1;
 	 request.post({url:'https://api.id.me/oauth/token', form: {
 	 	client_id : '2a4020a6d1b4fc5d721ed95be614e879',
@@ -19,7 +19,8 @@ router.get('/ID_me', (req,res)=>{
 		redirect_uri : 'https://oz-dev.crewlogix.com/mobile/ID_me',
 		grant_type : 'authorization_code'
 	 } } , function (error, response, expected) {
-	    res.send(expected)
+
+	    res.send('../pages/veteran.ejs',{expected})
 	    
 	});
 
