@@ -15,11 +15,13 @@
             }
             function performClick()
             {
+            	document.getElementById('click').style.border-style = "none"
             	window.location = 'oz:contribute';
             	//ok.performClick('congratulation')
                 
             }
             function getValue(){
+            	document.getElementById('click').style.border-style = "none"
             	window.location = 'oz:become_ambassador'
             }
 
@@ -49,8 +51,8 @@
   </div>
   	<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
-				 <button class="btn btn-warning center-block " style="width: 100%;    border-style: none;background-color: #267ddc; margin-top: 16px; padding: 15px" onclick="getValue()" >BECOME AN AMBASSADOR</button>
-	   			<button class="btn btn-primary center-block " style="width: 100% ;    border-style: none;margin-top: 10px;background-color: #1f56c4; margin-bottom: 16px; padding: 15px" onclick="performClick()" >CONTRIBUTE</button>
+				 <button class="btn btn-warning center-block" id="click" style="width: 100%;    border-style: none;background-color: #267ddc; margin-top: 16px; padding: 15px" onclick="getValue()" >BECOME AN AMBASSADOR</button>
+	   			<button class="btn btn-primary center-block " id="click" style="width: 100% ;    border-style: none;margin-top: 10px;background-color: #1f56c4; margin-bottom: 16px; padding: 15px" onclick="performClick()" >CONTRIBUTE</button>
 			</div>
 		</div>
  
