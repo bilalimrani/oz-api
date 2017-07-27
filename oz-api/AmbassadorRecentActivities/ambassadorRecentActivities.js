@@ -10,7 +10,7 @@ let Validator = (req,res,next) =>{
     let result = false;
     if(params.type && params.user_id)
     {
-        if(params.type === 'video' || params.type === 'voice' || params.type === 'text'){
+        if(params.type === 'video' || params.type === 'voice' || params.type === 'sent_message' || params.type === 'receive_message'){
            result = true;
         }
         else{
