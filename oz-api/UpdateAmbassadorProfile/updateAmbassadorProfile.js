@@ -13,15 +13,28 @@ router.put('/updateambassador',verifier_function.verifier,(req,res)=>{
 		.then((data)=>{
 			mysqlUpdateAmbassador.returnResponse(res.locals.id)
 			.then((data)=>{
-				REST_API_STATUS_CODE.sucess.response = data[0];
-				res.json(REST_API_STATUS_CODE.sucess);
+				console.log('AmbassadorProfile Id',data[0].id)
+				let mysqlData = require('../mysql/GetAmbassadorMin_Msg_Sec/mysql-min_msg_sec');
+				mysqlData.getData(data[0].id)
+				.then((obj)=>{
+					console.log('Object get ',obj)
+					data[0].minutes = obj[0].minutes;
+					data[0].messages = obj[0].messages;
+					data[0].calls = obj[0].calls;
+					REST_API_STATUS_CODE.sucess.response = data[0];
+					res.json(REST_API_STATUS_CODE.sucess);
+				})
+				.catch((err)=>{
+					res.status(400).json(REST_API_STATUS_CODE.badrequest);
+				})
+				
 			})
 			.catch((err)=>{
 				res.status(400).json(REST_API_STATUS_CODE.badrequest);
 			})
 		})
 		.catch((err)=>{
-		res.status(400).json(REST_API_STATUS_CODE.badrequest);
+			res.status(400).json(REST_API_STATUS_CODE.badrequest);
 		})					             	
 	})
 	.catch((err)=>{
@@ -38,8 +51,20 @@ router.get('/getambassadorprofile',verifier_function.verifier,(req,res)=>{
 			res.json(REST_API_STATUS_CODE.no_content_found);
 		}
 		else{
-			REST_API_STATUS_CODE.sucess.response = data[0];
-			res.json(REST_API_STATUS_CODE.sucess);
+			console.log('AmbassadorProfile Id',data[0].id)
+				let mysqlData = require('../mysql/GetAmbassadorMin_Msg_Sec/mysql-min_msg_sec');
+				mysqlData.getData(data[0].id)
+				.then((obj)=>{
+					console.log('Object get ',obj)
+					data[0].minutes = obj[0].minutes;
+					data[0].messages = obj[0].messages;
+					data[0].calls = obj[0].calls;
+					REST_API_STATUS_CODE.sucess.response = data[0];
+					res.json(REST_API_STATUS_CODE.sucess);
+				})
+				.catch((err)=>{
+					res.status(400).json(REST_API_STATUS_CODE.badrequest);
+				})
 		}
 	})
 	.catch((e)=>{
