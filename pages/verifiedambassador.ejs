@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
 
 
-<title>Verified Ambassador</title>
-<script type='text/javascript'>
-            function getText()
-            {
-                return document.getElementById('txtinput').value;
-            }
-            function performClick()
-            {
-            	window.location = 'oz:congratulation';
-            	//ok.performClick('congratulation')
-                
-            }
-        </script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Verified Ambassador</title>
+    <script type='text/javascript'>
+                function getText()
+                {
+                    return document.getElementById('txtinput').value;
+                }
+                function performClick()
+                {
+                	window.location = 'oz:congratulation';
+                	//ok.performClick('congratulation')
+                    
+                }
+            </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-</head>
-<body>
-	<div class="container">
-	<p class="centering text-center" style="color: #308bf2;margin-top: 30%" ><b>Congratulations!</b></p>
-	<p class="centering text-center" style="color: #308bf2" ><b>You are verified as an Ambassador</b></p>
-	<button  class="btn btn-primary center-block" style="width: 40%; margin-top: 70px;" onclick="performClick()">Continue</button>
-	</div>
- 
-	
-</div>
-</body>
+    </head>
+    <body style="background-color: #f0f1f5">
+    	<div class="container">
+        	<p class="centering text-center" style="color: #308bf2;margin-top: 30px" ><b>Congratulations!</b></p>
+        	<p class="centering text-center" style="color: #308bf2" ><b>You are verified as an Ambassador</b></p>
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <button  class="btn btn-primary center-block" style="width: 100%;padding: 15px; margin-top: 40px;" onclick="performClick()">Continue</button>
+                </div>
+            </div>
+    	</div>
+    </body>
 </html>

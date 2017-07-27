@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const verifier_function = require('../verifier');
-
 var request = require('request');
 const app = express();
 var url = 'https://api.id.me/oauth/token';
-let code;
 var curl = require('curlrequest');
+const REST_API_STATUS_CODE = require("../../responses");
+let code;
 
 router.get('/ID_me', (req,res)=>{
 	code = req.query.code
@@ -27,6 +27,19 @@ router.get('/ID_me', (req,res)=>{
 	//res.send({"message" : response1})
 
 
+
+})
+router.post('/veteran_data', verifier_function.verifier, (req, res)=>{
+	if(req.body.veteran_data != ""){
+		let mysql_insertIDme = require('../mysql/ID_me/mysql_IDme')
+	    mysql_insertIDme.updateVeteran(res.locals, req.body.veteran_data)
+	    .then((data)=>{
+	    	res.send({"responseCode" : 200, "message" : "Data updated Sussessfullt", "response" : data[1][0] })
+	    })
+	   	.catch((err)=>{
+	    	res.status(400).json(REST_API_STATUS_CODE.badrequest)
+	    })
+	}
 })
 
 

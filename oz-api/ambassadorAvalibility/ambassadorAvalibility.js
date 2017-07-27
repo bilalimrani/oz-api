@@ -8,7 +8,7 @@ const configration = require('../../config')();
 router.put('/ambassadorAvalibility', verifier_function.verifier,  (req, res)=>{
 	const ambassadorAvailability = require('../mysql/ambassadorAvailability/mysql-ambassadorAvailability');
 	let user_id = res.locals
-
+	console.log("before",req.body)
 	new Promise((resolve, reject)=>{
 
 		ambassadorAvailability.checkambassadorAvailability(req.body, user_id)
@@ -21,6 +21,7 @@ router.put('/ambassadorAvalibility', verifier_function.verifier,  (req, res)=>{
 	}).then((data)=>{
 		ambassadorAvailability.getAmbassador(user_id.id)
 		.then((data)=>{
+			console.log("after",data)
 			res.json({responseCode : 200, message : "Data Retrived Sucessfully", response : data});			
 		})
 		.catch((err)=>{
