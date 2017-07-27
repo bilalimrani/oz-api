@@ -33,6 +33,12 @@
 		left: 3px;
 		color: blue;
 	}
+	.regular:focus { 
+	    border-style: none !important	
+	}
+        #button:focus { 
+            border-style: none !important
+        }
 </style>
 </head>
 <body style="background-color: #f0f1f5">
@@ -54,7 +60,7 @@
 				</div>
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
-				<button class="btn btn-primary center-block" style="width : 100%; margin: 30px 0px; padding: 15px; background-color: #267ddc" onclick="getVal()">Submit</button>
+				<button class="btn btn-primary center-block" id="button" style="width : 100%; margin: 30px 0px; padding: 15px; background-color: #267ddc" onclick="getVal()">Submit</button>
 			</div>
 		</div>
     </div>
