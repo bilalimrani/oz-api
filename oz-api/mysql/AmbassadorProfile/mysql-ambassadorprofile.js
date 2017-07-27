@@ -57,7 +57,7 @@ var AmbassadorProfile = function(){
 					img_path = '';
 				}
 				else{
-					let image_path = img_path.split('\\');
+					let image_path = img_path.split('/');
 					let thumbs_img = image_path[image_path.length-1];
 			 		let splits_thumb = thumbs_img.split('.');
 			 		full_thumb_path = splits_thumb[0] + '_thumb.' + splits_thumb[1];
