@@ -18,7 +18,7 @@ router.get('/becomeambassador', verifier_function.verifier, (req,res)=>{
 
 });
 
-router.get('/quessionarepage',verifier_function.verifier,(req,res)=>{
+router.get('/quessionarepage',(req,res)=>{
 	console.log("I am in Quessionare Page")
  
 	let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
