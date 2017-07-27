@@ -16,7 +16,7 @@ app.use(helmet())
 app.use(helmet.noCache())
 app.use(helmet.frameguard())
 
-
+app.use(express.static(__dirname + '/bin'));
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
