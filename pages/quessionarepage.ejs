@@ -15,24 +15,7 @@
 
 
 <style type="text/css">
-	input.regular {
-	    -webkit-appearance: none;
-	    background-color: #fafafa;
-	    border: 1px solid #cacece;
-	    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-	    padding: 7px;
-	    border-radius: 3px;
-	    display: inline-block;
-	    position: relative;
-	}
-	.regular:checked:after {
-		content: '\2713';  
-		font-size: 12px;
-		position: absolute;
-		top: 0px;
-		left: 3px;
-		color: blue;
-	}
+	
 	.regular:focus { 
 	    outline : none;	
 	}
@@ -50,19 +33,21 @@
 						<p style="margin-top: 30px; float: left; width: 97%">&nbsp&nbsp<%=q1%></p>
 					</div>
 	
-					<p style="margin-bottom: 7px"><input type="checkbox" style="background-color: white; font-family:regular;" id="button" class="regular" name="" value="">&nbsp<%-chk1_1%></p>
-					<p style="margin-bottom: 7px"><input type="checkbox" style="background-color: white; font-family:regular;" id="button" class="regular" name="" value="">&nbsp<%-chk1_2%></p>
-					<p style="margin-bottom: 7px"><input type="checkbox" style="background-color: white; font-family:regular;" id="button" class="regular" name="" value="">&nbsp<%=chk1_3%></p>
-					<p style="margin-bottom: 7px"><input type="checkbox" style="background-color: white; font-family:regular;" id="button" class="regular" name="" value="">&nbsp<%=chk1_4%></p>
+					
+						<p style="margin-bottom: 7px"><input type="radio" style="background-color: white; font-family:regular;" id="button" class="regular" name="Q1" value="" checked>&nbsp<%-chk1_1%></p>
+							<p style="margin-bottom: 7px"><input type="radio" style="background-color: white; font-family:regular;" id="button" class="regular" name="Q1" value="">&nbsp<%-chk1_2%></p>
+							<p style="margin-bottom: 7px"><input type="radio" style="background-color: white; font-family:regular;" id="button" class="regular" name="Q1" value="">&nbsp<%=chk1_3%></p>
+							<p style="margin-bottom: 7px"><input type="radio" style="background-color: white; font-family:regular;" id="button" class="regular" name="Q1" value="">&nbsp<%=chk1_4%></p>
+				
 
 					<div style="width: 100%">
 						<p style="margin-top: 30px; float: left; width: 3%"><span style="color: blue; size: 25px;"><b>Q:</b></span></p>
 						<p style="margin-top: 30px; float: left; width: 97%">&nbsp&nbsp<%=q2%></p>
 					</div>
-					<p style="margin-bottom: 7px"><input type="checkbox" style="background-color: white; font-family:regular;" id="button" class="regular" name="" value="">&nbsp<%-chk1_1%></p>
-					<p style="margin-bottom: 7px"><input type="checkbox" style="background-color: white; font-family:regular;" id="button" class="regular" name="" value="">&nbsp<%-chk1_2%></p>
-					<p style="margin-bottom: 7px"><input type="checkbox" style="background-color: white; font-family:regular;" id="button" class="regular" name="" value="">&nbsp<%=chk1_3%></p>
-					<p style="margin-bottom: 7px"><input type="checkbox" style="background-color: white; font-family:regular;" id="button" class="regular" name="" value="">&nbsp<%=chk1_4%></p>
+					<p style="margin-bottom: 7px"><input type="radio" style="background-color: white; font-family:regular;" id="button" class="regular" name="Q2" value="">&nbsp<%-chk1_1%></p>
+					<p style="margin-bottom: 7px"><input type="radio" style="background-color: white; font-family:regular;" id="button" class="regular" name="Q2" value="">&nbsp<%-chk1_2%></p>
+					<p style="margin-bottom: 7px"><input type="radio" style="background-color: white; font-family:regular;" id="button" class="regular" name="Q2" value="">&nbsp<%=chk1_3%></p>
+					<p style="margin-bottom: 7px"><input type="radio" style="background-color: white; font-family:regular;" id="button" class="regular" name="Q2" value="">&nbsp<%=chk1_4%></p>
 				</div>
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
