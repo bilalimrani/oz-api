@@ -57,7 +57,7 @@ var AmbassadorProfile = function(){
 					img_path = '';
 				}
 				else{
-					let image_path = img_path.split('/');
+					let image_path = img_path.split('\\');
 					let thumbs_img = image_path[image_path.length-1];
 			 		let splits_thumb = thumbs_img.split('.');
 			 		full_thumb_path = splits_thumb[0] + '_thumb.' + splits_thumb[1];
@@ -81,10 +81,15 @@ var AmbassadorProfile = function(){
 		            user_id:user_id,
 		            profile_pic: img_path,
 					thumbnail : full_thumb_path,
+					date_of_birth : req.body.date_of_birth,
+					contact : req.body.contact,
+					specialties : req.body.specialties
+
+
 		        };
 		        //console.log('My dataobj',dataobj)
 
-		       	let query = 'UPDATE ambassedor SET name =:name, age =:age,city=:city,state=:state,zip_code=:zip_code, gender =:gender ,service_member=:service_member,service=:service,veteran=:veteran,mos=:mos,component=:component,profile_pic=:profile_pic,thumbnail=:thumbnail,lat=:lat,lng=:lng WHERE user_id =:user_id';
+		       	let query = 'UPDATE ambassedor SET name =:name, age =:age,date_of_birth=:date_of_birth,specialties=:specialties,contact=:contact,city=:city,state=:state,zip_code=:zip_code, gender =:gender ,service_member=:service_member,service=:service,veteran=:veteran,mos=:mos,component=:component,profile_pic=:profile_pic,thumbnail=:thumbnail,lat=:lat,lng=:lng WHERE user_id =:user_id';
 		       	
 		       	return new Promise((resolve,reject)=>{
 		       		databaseUtil.updateMultiRecord(mysql,query,dataobj,(err,data)=>{
