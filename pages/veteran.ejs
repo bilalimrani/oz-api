@@ -9,14 +9,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+<style type="text/css">
+  #button:focus { 
+    outline : none;
+  }
+</style>
 </head>
 <body>
 	<div class="container">
 	<p class="centering text-center" style="color: #308bf2;margin-top: 30%" ><b>Congratulations!</b></p>
 	<p class="centering text-center" style="color: #308bf2" ><b>You are verified as an Veteran</b></p>
     <p class="centering text-center" style="color: #308bf2" ><b><%= data%></b></p>
-	<button id="pin7Off"  class="btn btn-primary center-block" style="width: 40%; margin-top: 70px;" onclick="performClick('<%= data%>')">Continue</button>
+	<button id="pin7Off"  class="btn btn-primary center-block" id="button"> style="width: 40%; margin-top: 70px;" onclick="performClick('<%= data%>')">Continue</button>
 	</div>
  
 	
