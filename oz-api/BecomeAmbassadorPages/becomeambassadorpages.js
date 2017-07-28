@@ -15,15 +15,24 @@ router.get('/becomeambassador', verifier_function.verifier, (req,res)=>{
 	})
 });
 
-router.get('/quessionarepage',(req,res)=>{
+router.get('/quessionarepage', verifier_function.verifier, (req,res)=>{
 	console.log("I am in Quessionare Page")
  	
 	const ambassadorPages = require('../mysql/ambassadorPages/mysql-ambassadorPages')
 	ambassadorPages.questionarepage()
 	.then((data)=>{
-		res.render('../pages/quessionarepage', data);
+
+	let qs1 = "Reasearch on the development of a person in a so-called 'humanistic life outlook' has shown that it is facilitated by:";
+    let qs2 = "In the context of group counseling,members that are high in conformity also tend to be high in:";
+    let ans1_1 = "formal educational experiances XYZ"
+    let ans1_2 = "observational learning experiances"
+    let ans1_3 = "deverse interpresonal interaction"
+    let ans1_4 = "All of the Above"
+    res.render('../pages/quessionarepage',{q1:qs1,q2:qs2,chk1_1:ans1_1,chk1_2:ans1_2,chk1_3:ans1_3,chk1_4:ans1_4,host:configration.path });
 	})
-    
+
+
+
 })
 router.get('/congratulationpage',verifier_function.verifier,(req,res)=>{
 	console.log("I am in Congratulation Page");
