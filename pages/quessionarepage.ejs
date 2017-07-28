@@ -28,13 +28,15 @@
 	<div class="container" >
 		
 				<div style="padding: 0px 10px">
-					<div style="width: 100%">
-						<p style="margin-top: 30px; float: left; width: 3%"><span style="color: blue; size: 25px;"><b>Q:</b></span></p>
-						<p style="margin-top: 30px; float: left; width: 97%">&nbsp&nbsp<%=q1%></p>
-					</div>
+					<% for(var key in data){%>
+						<div style="width: 100%">
+							<p style="margin-top: 30px; float: left; width: 3%"><span style="color: blue; size: 25px;"><b>Q:</b></span></p>
+							<p style="margin-top: 30px; float: left; width: 97%">&nbsp&nbsp<%=data[key]%></p>
+						</div>
+					<%}%>
 	
 					
-					<div style="width: 100%">
+					<!-- <div style="width: 100%">
 						<div style="width: 5%; float: left;">
 							<p><b style="color: blue">A: </b></p>
 						</div>
@@ -67,7 +69,7 @@
 			<div class="col-sm-10 col-sm-offset-1">
 				<button class="btn btn-primary center-block" id="button" style="width : 100%; margin: 30px 0px; padding: 15px; background-color: #267ddc" onclick="getVal()">Submit</button>
 			</div>
-		</div>
+		</div> -->
     </div>
  	
  	
