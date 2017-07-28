@@ -16,6 +16,7 @@ const ACCOUNT_SID = 'AC66dd2217bb7590e00ed3e3b6de6d86b0';
 const API_KEY_SID = 'SK57a3f01aa2ab80609a9d59f427b4934c';
 const API_KEY_SECRET = 'NDHbH3ujBCe6diMiqEpd5JzrabPHso8A';
 const APP_SID = 'AP15fb163f116a59de8a753dea5a147474';
+const randomstring = require("randomstring");
 
 const FCM = require('fcm-push');
 
@@ -37,7 +38,6 @@ router.post('/twilio_voice',verifier_function.verifier,(req,res)=>{
           reject(err);
         }
         else{
-          console.log("data",data)
           receiver_deviceId = data[0].deviceId
           resolve({receiver_deviceId : receiver_deviceId}) 
         }
@@ -65,15 +65,17 @@ router.post('/twilio_voice',verifier_function.verifier,(req,res)=>{
       }
 
        let dataobj = {
-        access_token : req.userData.access_token
+       id : res.locals.id
       }
-      let query = `SELECT * FROM users WHERE access_token = :access_token`
+      let query = `SELECT * FROM users WHERE id = :id`
 
       databaseUtil.getSingleRecord(mysql,query,dataobj,function (err,data){
         if(err){
+          console.log(err)
           reject(err);
         }
         else{
+          console.log("response",data)
           var call = Object.assign(data, call_obj)
           resolve(call)
         }
