@@ -15,7 +15,7 @@ router.get('/becomeambassador', verifier_function.verifier, (req,res)=>{
 	})
 });
 
-router.get('/questionarepage',verifier_function.verifier,(req,res)=>{
+router.get('/quessionarepage',verifier_function.verifier,(req,res)=>{
 	console.log("I am in Quessionare Page")
  	
 	const ambassadorPages = require('../mysql/ambassadorPages/mysql-ambassadorPages')
