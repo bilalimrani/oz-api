@@ -6,13 +6,14 @@ const mysql = require('../mysql-client');
 var multer = require('multer');
 var thumb = require('node-thumbnail').thumb;
 console.log("mysql-AmbassadorProfile file")
-let path = "";
-let thumbPath = "";
-var img_path = null; 
+let path = "./bin/upload";
+let thumbPath = null;
+
 var AmbassadorProfile = function(){
 	return{
 		getImage : function(req,res){
 			console.log("I am in getImage function of AmbassadorProfile")
+			let img_path = null; 
 			return new Promise((resolve,reject)=>{
 				var storage = multer.diskStorage({
 				destination: function(req, file, callback) {
@@ -50,18 +51,19 @@ var AmbassadorProfile = function(){
 				})
 			});
 		},
-		updateProfile : function(req,img_path,user_id){
+		updateProfile : function(req,img_paths,user_id){
 			console.log("I am In Update profile function")
+				let new_img = img_paths;
 				let full_thumb_path = '';
-				if(img_path == null){
-					img_path = '';
+				if(new_img == null){
+					new_img = '';
 				}
 				else{
-					let image_path = img_path.split('\\');
+					let image_paths = new_img.split('\\');
 					let thumbs_img = image_path[image_path.length-1];
 			 		let splits_thumb = thumbs_img.split('.');
 			 		full_thumb_path = splits_thumb[0] + '_thumb.' + splits_thumb[1];
-					img_path = 'http://' + configration.path + '/upload/'+image_path[image_path.length-1];
+					new_img = 'http://' + configration.path + '/upload/'+image_path[image_path.length-1];
 					full_thumb_path = 'http://'+configration.path+ "/thumbnail/" + full_thumb_path
 				}	
 				let dataobj = {			
@@ -79,7 +81,7 @@ var AmbassadorProfile = function(){
 					state : req.body.state,
 					zip_code : req.body.zip_code, 
 		            user_id:user_id,
-		            profile_pic: img_path,
+		            profile_pic: new_img,
 					thumbnail : full_thumb_path,
 					date_of_birth : req.body.date_of_birth,
 					contact : req.body.contact,
