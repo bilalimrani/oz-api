@@ -59,13 +59,14 @@ var AmbassadorProfile = function(){
 					img_path = '';
 				}
 				else{
-					let image_path = img_path.split('\\');
+					let image_path = img_path.split('/');
 					let thumbs_img = image_path[image_path.length-1];
 			 		let splits_thumb = thumbs_img.split('.');
 			 		full_thumb_path = splits_thumb[0] + '_thumb.' + splits_thumb[1];
 					img_path = 'http://' + configration.path + '/upload/'+image_path[image_path.length-1];
 					full_thumb_path = 'http://'+configration.path+ "/thumbnail/" + full_thumb_path
 				}	
+				console.log('iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii',img_path)
 				let dataobj = {			
 					name:req.body.name, 
 		            age:req.body.age ,
