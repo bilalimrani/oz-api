@@ -8,10 +8,11 @@ var thumb = require('node-thumbnail').thumb;
 console.log("mysql-AmbassadorProfile file")
 let path = "./bin/upload";
 let thumbPath = "./bin/thumbnail";
-var img_path = null; 
+
 var AmbassadorProfile = function(){
 	return{
 		getImage : function(req,res){
+			let img_path = null; 
 			console.log("I am in getImage function of AmbassadorProfile")
 			return new Promise((resolve,reject)=>{
 				var storage = multer.diskStorage({
@@ -50,7 +51,8 @@ var AmbassadorProfile = function(){
 				})
 			});
 		},
-		updateProfile : function(req,img_path,user_id){
+		updateProfile : function(req,img_paths,user_id){
+			let img_path = img_paths
 			console.log("I am In Update profile function")
 				let full_thumb_path = '';
 				if(img_path == null){
@@ -64,6 +66,7 @@ var AmbassadorProfile = function(){
 					img_path = 'http://' + configration.path + '/upload/'+image_path[image_path.length-1];
 					full_thumb_path = 'http://'+configration.path+ "/thumbnail/" + full_thumb_path
 				}	
+				console.log('iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii',img_path)
 				let dataobj = {			
 					name:req.body.name, 
 		            age:req.body.age ,
@@ -81,10 +84,15 @@ var AmbassadorProfile = function(){
 		            user_id:user_id,
 		            profile_pic: img_path,
 					thumbnail : full_thumb_path,
+					date_of_birth : req.body.date_of_birth,
+					contact : req.body.contact,
+					specialties : req.body.specialties
+
+
 		        };
 		        //console.log('My dataobj',dataobj)
 
-		       	let query = 'UPDATE ambassedor SET name =:name, age =:age,city=:city,state=:state,zip_code=:zip_code, gender =:gender ,service_member=:service_member,service=:service,veteran=:veteran,mos=:mos,component=:component,profile_pic=:profile_pic,thumbnail=:thumbnail,lat=:lat,lng=:lng WHERE user_id =:user_id';
+		       	let query = 'UPDATE ambassedor SET name =:name, age =:age,date_of_birth=:date_of_birth,specialties=:specialties,contact=:contact,city=:city,state=:state,zip_code=:zip_code, gender =:gender ,service_member=:service_member,service=:service,veteran=:veteran,mos=:mos,component=:component,profile_pic=:profile_pic,thumbnail=:thumbnail,lat=:lat,lng=:lng WHERE user_id =:user_id';
 		       	
 		       	return new Promise((resolve,reject)=>{
 		       		databaseUtil.updateMultiRecord(mysql,query,dataobj,(err,data)=>{
